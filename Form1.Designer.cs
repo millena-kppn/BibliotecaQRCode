@@ -28,19 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            labelText = new Label();
             SuspendLayout();
+            // 
+            // labelText
+            // 
+            labelText.AutoSize = true;
+            labelText.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            labelText.Location = new Point(409, 342);
+            labelText.Name = "labelText";
+            labelText.Size = new Size(374, 47);
+            labelText.TabIndex = 0;
+            labelText.Text = "Sistema de Biblioteca";
+            labelText.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1257, 750);
+            Controls.Add(labelText);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "Form1";
             Text = "Form1";
-            //Load += Form1_Load; TESTE PARA VERIFICAR CONEXÃO COM O BANCO DE DADOS
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label labelText;
     }
 }
