@@ -28,12 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmLogin";
+            txtMatricula = new TextBox();
+            btnEntrar = new Button();
+            labelMatricula = new Label();
+            SuspendLayout();
+            // 
+            // txtMatricula
+            // 
+            txtMatricula.Location = new Point(293, 148);
+            txtMatricula.Name = "txtMatricula";
+            txtMatricula.Size = new Size(160, 33);
+            txtMatricula.TabIndex = 0;
+            // 
+            // btnEntrar
+            // 
+            btnEntrar.Location = new Point(333, 222);
+            btnEntrar.Name = "btnEntrar";
+            btnEntrar.Size = new Size(120, 37);
+            btnEntrar.TabIndex = 1;
+            btnEntrar.Text = "Entrar";
+            btnEntrar.UseVisualStyleBackColor = true;
+            // 
+            // labelMatricula
+            // 
+            labelMatricula.AutoSize = true;
+            labelMatricula.Location = new Point(295, 106);
+            labelMatricula.Name = "labelMatricula";
+            labelMatricula.Size = new Size(92, 25);
+            labelMatricula.TabIndex = 2;
+            labelMatricula.Text = "Matrícula";
+            // 
+            // FrmLogin
+            // 
+            AutoScaleDimensions = new SizeF(11F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(labelMatricula);
+            Controls.Add(btnEntrar);
+            Controls.Add(txtMatricula);
+            Name = "FrmLogin";
+            Text = "FrmLogin";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox txtMatricula;
+        private Button btnEntrar;
+        private Label labelMatricula;
     }
 }

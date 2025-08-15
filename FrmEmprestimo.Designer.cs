@@ -28,12 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmEmprestimo";
+            lblAluno = new Label();
+            txtCodigoQR = new TextBox();
+            btnDevolver = new Button();
+            SuspendLayout();
+            // 
+            // lblAluno
+            // 
+            lblAluno.AutoSize = true;
+            lblAluno.Location = new Point(275, 100);
+            lblAluno.Name = "lblAluno";
+            lblAluno.Size = new Size(130, 25);
+            lblAluno.TabIndex = 0;
+            lblAluno.Text = "Aluno Logado";
+            // 
+            // txtCodigoQR
+            // 
+            txtCodigoQR.Location = new Point(256, 181);
+            txtCodigoQR.Name = "txtCodigoQR";
+            txtCodigoQR.Size = new Size(160, 33);
+            txtCodigoQR.TabIndex = 1;
+            // 
+            // btnDevolver
+            // 
+            btnDevolver.Location = new Point(239, 268);
+            btnDevolver.Name = "btnDevolver";
+            btnDevolver.Size = new Size(190, 37);
+            btnDevolver.TabIndex = 2;
+            btnDevolver.Text = "Devolver livros";
+            btnDevolver.UseVisualStyleBackColor = true;
+            // 
+            // FrmEmprestimo
+            // 
+            AutoScaleDimensions = new SizeF(11F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnDevolver);
+            Controls.Add(txtCodigoQR);
+            Controls.Add(lblAluno);
+            Name = "FrmEmprestimo";
+            Text = "FrmEmprestimo";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblAluno;
+        private TextBox txtCodigoQR;
+        private Button btnDevolver;
     }
 }
