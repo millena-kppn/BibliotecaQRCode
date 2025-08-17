@@ -1,6 +1,6 @@
 ﻿namespace BibliotecaQRCode
 {
-    partial class FrmDevolucao
+    partial class FrmEscolha
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtCodigoQR = new TextBox();
-            btnDevolver = new Button();
+            btnAdmin = new Button();
+            btnAluno = new Button();
             SuspendLayout();
             // 
-            // txtCodigoQR
+            // btnAdmin
             // 
-            txtCodigoQR.Location = new Point(174, 77);
-            txtCodigoQR.Margin = new Padding(2, 2, 2, 2);
-            txtCodigoQR.Name = "txtCodigoQR";
-            txtCodigoQR.Size = new Size(103, 23);
-            txtCodigoQR.TabIndex = 0;
+            btnAdmin.Location = new Point(280, 241);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(180, 82);
+            btnAdmin.TabIndex = 1;
+            btnAdmin.Text = "Administrador";
+            btnAdmin.UseVisualStyleBackColor = true;
+            btnAdmin.Click += btnAdmin_Click_1;
             // 
-            // btnDevolver
+            // btnAluno
             // 
-            btnDevolver.Location = new Point(187, 126);
-            btnDevolver.Margin = new Padding(2, 2, 2, 2);
-            btnDevolver.Name = "btnDevolver";
-            btnDevolver.Size = new Size(76, 22);
-            btnDevolver.TabIndex = 1;
-            btnDevolver.Text = "Devolver";
-            btnDevolver.UseVisualStyleBackColor = true;
+            btnAluno.Location = new Point(280, 153);
+            btnAluno.Name = "btnAluno";
+            btnAluno.Size = new Size(180, 82);
+            btnAluno.TabIndex = 2;
+            btnAluno.Text = "Aluno";
+            btnAluno.UseVisualStyleBackColor = true;
             // 
-            // FrmDevolucao
+            // FrmEscolha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(509, 270);
-            Controls.Add(btnDevolver);
-            Controls.Add(txtCodigoQR);
-            Margin = new Padding(2, 2, 2, 2);
-            Name = "FrmDevolucao";
-            Text = "FrmDevolucao";
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnAluno);
+            Controls.Add(btnAdmin);
+            Name = "FrmEscolha";
+            Text = "FrmEscolha";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private TextBox txtCodigoQR;
-        private Button btnDevolver;
+        private Button btnAdmin;
+        private Button btnAluno;
     }
 }

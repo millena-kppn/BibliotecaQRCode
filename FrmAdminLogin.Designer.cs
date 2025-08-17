@@ -1,6 +1,6 @@
 ﻿namespace BibliotecaQRCode
 {
-    partial class FrmDevolucao
+    partial class FrmAdminLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtCodigoQR = new TextBox();
-            btnDevolver = new Button();
+            txtSenha = new TextBox();
+            btnEntrar = new Button();
             SuspendLayout();
             // 
-            // txtCodigoQR
+            // txtSenha
             // 
-            txtCodigoQR.Location = new Point(174, 77);
-            txtCodigoQR.Margin = new Padding(2, 2, 2, 2);
-            txtCodigoQR.Name = "txtCodigoQR";
-            txtCodigoQR.Size = new Size(103, 23);
-            txtCodigoQR.TabIndex = 0;
+            txtSenha.Location = new Point(312, 175);
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(100, 23);
+            txtSenha.TabIndex = 0;
             // 
-            // btnDevolver
+            // btnEntrar
             // 
-            btnDevolver.Location = new Point(187, 126);
-            btnDevolver.Margin = new Padding(2, 2, 2, 2);
-            btnDevolver.Name = "btnDevolver";
-            btnDevolver.Size = new Size(76, 22);
-            btnDevolver.TabIndex = 1;
-            btnDevolver.Text = "Devolver";
-            btnDevolver.UseVisualStyleBackColor = true;
+            btnEntrar.Location = new Point(323, 233);
+            btnEntrar.Name = "btnEntrar";
+            btnEntrar.Size = new Size(75, 23);
+            btnEntrar.TabIndex = 1;
+            btnEntrar.Text = "Entrar";
+            btnEntrar.UseVisualStyleBackColor = true;
             // 
-            // FrmDevolucao
+            // FrmAdminLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(509, 270);
-            Controls.Add(btnDevolver);
-            Controls.Add(txtCodigoQR);
-            Margin = new Padding(2, 2, 2, 2);
-            Name = "FrmDevolucao";
-            Text = "FrmDevolucao";
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnEntrar);
+            Controls.Add(txtSenha);
+            Name = "FrmAdminLogin";
+            Text = "FrmAdmin";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox txtCodigoQR;
-        private Button btnDevolver;
+        private TextBox txtSenha;
+        private Button btnEntrar;
     }
 }

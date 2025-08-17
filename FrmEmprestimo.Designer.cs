@@ -36,36 +36,41 @@
             // lblAluno
             // 
             lblAluno.AutoSize = true;
-            lblAluno.Location = new Point(275, 100);
+            lblAluno.Location = new Point(174, 68);
+            lblAluno.Margin = new Padding(2, 0, 2, 0);
             lblAluno.Name = "lblAluno";
-            lblAluno.Size = new Size(130, 25);
+            lblAluno.Size = new Size(82, 15);
             lblAluno.TabIndex = 0;
             lblAluno.Text = "Aluno Logado";
             // 
             // txtCodigoQR
             // 
-            txtCodigoQR.Location = new Point(256, 181);
+            txtCodigoQR.Location = new Point(163, 109);
+            txtCodigoQR.Margin = new Padding(2, 2, 2, 2);
             txtCodigoQR.Name = "txtCodigoQR";
-            txtCodigoQR.Size = new Size(160, 33);
+            txtCodigoQR.Size = new Size(103, 23);
             txtCodigoQR.TabIndex = 1;
             // 
             // btnDevolver
             // 
-            btnDevolver.Location = new Point(239, 268);
+            btnDevolver.Location = new Point(152, 161);
+            btnDevolver.Margin = new Padding(2, 2, 2, 2);
             btnDevolver.Name = "btnDevolver";
-            btnDevolver.Size = new Size(190, 37);
+            btnDevolver.Size = new Size(121, 22);
             btnDevolver.TabIndex = 2;
             btnDevolver.Text = "Devolver livros";
             btnDevolver.UseVisualStyleBackColor = true;
             // 
             // FrmEmprestimo
             // 
-            AutoScaleDimensions = new SizeF(11F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.LightSteelBlue;
+            ClientSize = new Size(509, 270);
             Controls.Add(btnDevolver);
             Controls.Add(txtCodigoQR);
             Controls.Add(lblAluno);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "FrmEmprestimo";
             Text = "FrmEmprestimo";
             ResumeLayout(false);
