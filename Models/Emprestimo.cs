@@ -1,27 +1,22 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace BibliotecaQRCode.Models
+﻿namespace BibliotecaQRCode.Models
 {
     public class Emprestimo
     {
         public int Id { get; set; }
 
-        [Required]
         public int AlunoId { get; set; }
+        public Aluno? Aluno { get; set; }
 
-        [Required]
         public int LivroId { get; set; }
+        public Livro? Livro { get; set; }
 
         public DateTime DataEmprestimo { get; set; }
-        public DateTime DataDevolucao { get; set; }
 
-        // "Em andamento" ou "Devolvido"
-        [Required, MaxLength(20)]
-        public string Status { get; set; } = "Em andamento";
+        // Data real da devolução (fica NULL enquanto estiver emprestado)
+        public DateTime? DataDevolucao { get; set; }
 
-        public Aluno? Aluno { get; set; }
-        public Livro? Livro { get; set; }
+        // <— NOVO: status explícito
+        public string Status { get; set; } = "Emprestado";
     }
 }
 

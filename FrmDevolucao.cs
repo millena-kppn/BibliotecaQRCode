@@ -42,13 +42,14 @@ namespace BibliotecaQRCode
                 MessageBox.Show("Não há empréstimo em andamento para este livro.");
                 return;
             }
-
+            // Verifica se o livro já foi devolvido
+            emprestimo.DataDevolucao = DateTime.Now;
             emprestimo.Status = "Devolvido";
+
             db.SaveChanges();
 
             MessageBox.Show($"Devolução registrada!\nLivro: {livro.Titulo}");
         }
-
         private void btnDevolver_Click(object sender, EventArgs e)
         {
             //chamando o método ProcessarDevolucao com o texto do TextBox só que para o botão
