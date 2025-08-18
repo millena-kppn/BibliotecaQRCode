@@ -36,7 +36,7 @@
             // txtMatricula
             // 
             txtMatricula.Location = new Point(186, 89);
-            txtMatricula.Margin = new Padding(2, 2, 2, 2);
+            txtMatricula.Margin = new Padding(2);
             txtMatricula.Name = "txtMatricula";
             txtMatricula.Size = new Size(103, 23);
             txtMatricula.TabIndex = 0;
@@ -44,12 +44,13 @@
             // btnEntrar
             // 
             btnEntrar.Location = new Point(193, 131);
-            btnEntrar.Margin = new Padding(2, 2, 2, 2);
+            btnEntrar.Margin = new Padding(2);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(76, 22);
             btnEntrar.TabIndex = 1;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
+            btnEntrar.Click += btnEntrar_Click_1;
             // 
             // labelMatricula
             // 
@@ -70,7 +71,7 @@
             Controls.Add(labelMatricula);
             Controls.Add(btnEntrar);
             Controls.Add(txtMatricula);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "FrmLogin";
             Text = "FrmLogin";
             ResumeLayout(false);

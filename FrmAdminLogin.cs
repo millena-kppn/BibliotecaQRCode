@@ -8,11 +8,14 @@ namespace BibliotecaQRCode
         public FrmAdminLogin()
         {
             InitializeComponent();
+            this.AcceptButton = btnEntrar;
+            this.CancelButton = btnCancelar;
         }
-
-        private void btnEntrar_Click(object sender, EventArgs e)
+        //aqui
+        private void btnEntrar_Click_1(object sender, EventArgs e)
         {
-            string senhaCorreta = "admin123"; // depois pode colocar em config ou BD
+            // Simples por enquanto. Depois movemos para BD/config.
+            const string senhaCorreta = "admin123";
 
             if (txtSenha.Text == senhaCorreta)
             {
@@ -22,10 +25,16 @@ namespace BibliotecaQRCode
             }
             else
             {
-                MessageBox.Show("Senha incorreta!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Senha incorreta!", "Acesso negado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSenha.Clear();
                 txtSenha.Focus();
             }
+        }
+        //aqui
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

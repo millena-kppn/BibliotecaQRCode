@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using BibliotecaQRCode.Data;
 
 namespace BibliotecaQRCode
 {
@@ -9,37 +10,54 @@ namespace BibliotecaQRCode
         public FrmAdmin()
         {
             InitializeComponent();
+            PrepararGrid();
         }
 
-        private void btnAlunos_Click(object sender, EventArgs e)
+        private void PrepararGrid()
+        {
+            dgvDados.AutoGenerateColumns = true;
+            dgvDados.ReadOnly = true;
+            dgvDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDados.MultiSelect = false;
+            dgvDados.AllowUserToAddRows = false;
+            dgvDados.AllowUserToDeleteRows = false;
+            dgvDados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        //aqui
+        private void btnAlunos_Click_1(object sender, EventArgs e)
         {
             using (var db = new BibliotecaContext())
             {
-                dgvDados.DataSource = db.Alunos.ToList();
+                dgvDados.DataSource = db.Alunos
+                    .OrderBy(a => a.Nome)
+                    .ToList();
             }
         }
-
-        private void btnLivros_Click(object sender, EventArgs e)
+        //aqui
+        private void btnLivros_Click_1(object sender, EventArgs e)
         {
             using (var db = new BibliotecaContext())
             {
-                dgvDados.DataSource = db.Livros.ToList();
+                dgvDados.DataSource = db.Livros
+                    .OrderBy(l => l.Titulo)
+                    .ToList();
             }
         }
-
-        private void btnEmprestimos_Click(object sender, EventArgs e)
+        //aqui
+        private void btnEmprestimos_Click_1(object sender, EventArgs e)
         {
             using (var db = new BibliotecaContext())
             {
                 dgvDados.DataSource = db.Emprestimos
-                    .Select(e => new
+                    .Select(emp => new
                     {
-                        e.Id,
-                        Aluno = e.Aluno.Nome,
-                        Livro = e.Livro.Titulo,
-                        e.DataEmprestimo,
-                        e.DataDevolucao
+                        emp.Id,
+                        Aluno = emp.Aluno != null ? emp.Aluno.Nome : "Desconhecido",
+                        Livro = emp.Livro != null ? emp.Livro.Titulo : "Desconhecido",
+                        emp.DataEmprestimo,
+                        emp.DataDevolucao
                     })
+                    .OrderBy(e => e.DataEmprestimo)
                     .ToList();
             }
         }

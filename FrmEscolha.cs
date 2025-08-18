@@ -9,20 +9,20 @@ namespace BibliotecaQRCode
         {
             InitializeComponent();
         }
-
-        private void btnAluno_Click(object sender, EventArgs e)
+        //aqui
+        private void btnAluno_Click_1(object sender, EventArgs e)
         {
             Hide();
             new FrmLogin().ShowDialog();
             Show();
         }
-
-        private void btnAdmin_Click(object sender, EventArgs e)
+        private void btnAdmin_Click_1(object sender, EventArgs e)
         {
             Hide();
             new FrmAdminLogin().ShowDialog();
             Show();
         }
+        //ate aqui
     }
 }
 

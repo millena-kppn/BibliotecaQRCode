@@ -43,6 +43,7 @@
             btnAlunos.TabIndex = 0;
             btnAlunos.Text = "Alunos";
             btnAlunos.UseVisualStyleBackColor = true;
+            btnAlunos.Click += btnAlunos_Click_1;
             // 
             // btnLivros
             // 
@@ -52,6 +53,7 @@
             btnLivros.TabIndex = 1;
             btnLivros.Text = "Livros";
             btnLivros.UseVisualStyleBackColor = true;
+            btnLivros.Click += btnLivros_Click_1;
             // 
             // btnEmprestimos
             // 
@@ -61,6 +63,7 @@
             btnEmprestimos.TabIndex = 2;
             btnEmprestimos.Text = "Empréstimos";
             btnEmprestimos.UseVisualStyleBackColor = true;
+            btnEmprestimos.Click += btnEmprestimos_Click_1;
             // 
             // dgvDados
             // 
@@ -74,6 +77,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(dgvDados);
             Controls.Add(btnEmprestimos);

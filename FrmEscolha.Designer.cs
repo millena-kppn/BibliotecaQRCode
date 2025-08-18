@@ -50,11 +50,13 @@
             btnAluno.TabIndex = 2;
             btnAluno.Text = "Aluno";
             btnAluno.UseVisualStyleBackColor = true;
+            btnAluno.Click += btnAluno_Click_1;
             // 
             // FrmEscolha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(btnAluno);
             Controls.Add(btnAdmin);

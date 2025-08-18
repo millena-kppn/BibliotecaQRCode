@@ -46,20 +46,22 @@
             // txtCodigoQR
             // 
             txtCodigoQR.Location = new Point(163, 109);
-            txtCodigoQR.Margin = new Padding(2, 2, 2, 2);
+            txtCodigoQR.Margin = new Padding(2);
             txtCodigoQR.Name = "txtCodigoQR";
             txtCodigoQR.Size = new Size(103, 23);
             txtCodigoQR.TabIndex = 1;
+            txtCodigoQR.KeyDown += txtCodigoQR_KeyDown_1;
             // 
             // btnDevolver
             // 
             btnDevolver.Location = new Point(152, 161);
-            btnDevolver.Margin = new Padding(2, 2, 2, 2);
+            btnDevolver.Margin = new Padding(2);
             btnDevolver.Name = "btnDevolver";
             btnDevolver.Size = new Size(121, 22);
             btnDevolver.TabIndex = 2;
             btnDevolver.Text = "Devolver livros";
             btnDevolver.UseVisualStyleBackColor = true;
+            btnDevolver.Click += btnDevolver_Click_1;
             // 
             // FrmEmprestimo
             // 
@@ -70,9 +72,10 @@
             Controls.Add(btnDevolver);
             Controls.Add(txtCodigoQR);
             Controls.Add(lblAluno);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "FrmEmprestimo";
             Text = "FrmEmprestimo";
+            Load += FrmEmprestimo_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }

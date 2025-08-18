@@ -8,8 +8,8 @@ namespace BibliotecaQRCode
     public partial class FrmDevolucao : Form
     {
         public FrmDevolucao() => InitializeComponent();
-
-        private void txtCodigoQR_KeyDown(object sender, KeyEventArgs e)
+        //aqui
+        private void txtCodigoQR_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -18,7 +18,7 @@ namespace BibliotecaQRCode
                 txtCodigoQR.Clear();
             }
         }
-
+        //ate aqui
         private void ProcessarDevolucao(string codigoQR)
         {
             if (string.IsNullOrWhiteSpace(codigoQR)) return;
@@ -47,6 +47,14 @@ namespace BibliotecaQRCode
             db.SaveChanges();
 
             MessageBox.Show($"Devolução registrada!\nLivro: {livro.Titulo}");
+        }
+
+        private void btnDevolver_Click(object sender, EventArgs e)
+        {
+            //chamando o método ProcessarDevolucao com o texto do TextBox só que para o botão
+            var codigoQR = txtCodigoQR.Text.Trim();
+            ProcessarDevolucao(codigoQR);
+            txtCodigoQR.Clear();
         }
     }
 }

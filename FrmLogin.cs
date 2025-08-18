@@ -9,7 +9,8 @@ namespace BibliotecaQRCode
     public partial class FrmLogin : Form
     {
         public FrmLogin() => InitializeComponent();
-        private void btnEntrar_Click(object sender, EventArgs e)
+        //aqui
+        private void btnEntrar_Click_1(object sender, EventArgs e)
         {
             var matricula = txtMatricula.Text.Trim();
             if (string.IsNullOrWhiteSpace(matricula))
@@ -31,5 +32,6 @@ namespace BibliotecaQRCode
             new FrmEmprestimo(aluno).ShowDialog();
             Show();
         }
+        //ate aqui
     }
 }

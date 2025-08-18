@@ -35,20 +35,22 @@
             // txtCodigoQR
             // 
             txtCodigoQR.Location = new Point(174, 77);
-            txtCodigoQR.Margin = new Padding(2, 2, 2, 2);
+            txtCodigoQR.Margin = new Padding(2);
             txtCodigoQR.Name = "txtCodigoQR";
             txtCodigoQR.Size = new Size(103, 23);
             txtCodigoQR.TabIndex = 0;
+            txtCodigoQR.KeyDown += txtCodigoQR_KeyDown_1;
             // 
             // btnDevolver
             // 
             btnDevolver.Location = new Point(187, 126);
-            btnDevolver.Margin = new Padding(2, 2, 2, 2);
+            btnDevolver.Margin = new Padding(2);
             btnDevolver.Name = "btnDevolver";
             btnDevolver.Size = new Size(76, 22);
             btnDevolver.TabIndex = 1;
             btnDevolver.Text = "Devolver";
             btnDevolver.UseVisualStyleBackColor = true;
+            btnDevolver.Click += btnDevolver_Click;
             // 
             // FrmDevolucao
             // 
@@ -58,7 +60,7 @@
             ClientSize = new Size(509, 270);
             Controls.Add(btnDevolver);
             Controls.Add(txtCodigoQR);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "FrmDevolucao";
             Text = "FrmDevolucao";
             ResumeLayout(false);

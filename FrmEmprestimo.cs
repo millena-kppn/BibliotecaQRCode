@@ -15,13 +15,13 @@ namespace BibliotecaQRCode
             InitializeComponent();
             _aluno = aluno;
         }
-
-        private void FrmEmprestimo_Load(object sender, EventArgs e)
+        //aqui
+        private void FrmEmprestimo_Load_1(object sender, EventArgs e)
         {
             lblAluno.Text = $"Aluno: {_aluno.Nome} ({_aluno.Matricula})";
             txtCodigoQR.Focus();
         }
-
+        //ate aqui
         private bool AlunoTemAtraso()
         {
             using var db = new BibliotecaContext();
@@ -31,9 +31,8 @@ namespace BibliotecaQRCode
                 e.Status == "Em andamento" &&
                 e.DataDevolucao < agora);
         }
-
         // scanners costumam enviar ENTER ao final da leitura
-        private void txtCodigoQR_KeyDown(object sender, KeyEventArgs e)
+        private void txtCodigoQR_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -42,7 +41,6 @@ namespace BibliotecaQRCode
                 txtCodigoQR.Clear();
             }
         }
-
         private void ProcessarCodigo(string codigoQR)
         {
             if (string.IsNullOrWhiteSpace(codigoQR)) return;
@@ -89,10 +87,11 @@ namespace BibliotecaQRCode
 
             MessageBox.Show($"Empréstimo registrado!\n\nLivro: {livro.Titulo}\nDevolver até: {devolucao:dd/MM/yyyy}");
         }
-
-        private void btnDevolver_Click(object sender, EventArgs e)
+        //aqui
+        private void btnDevolver_Click_1(object sender, EventArgs e)
         {
             new FrmDevolucao().ShowDialog();
         }
+        //ate aqui
     }
 }

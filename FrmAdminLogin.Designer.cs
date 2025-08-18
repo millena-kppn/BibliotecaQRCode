@@ -30,6 +30,7 @@
         {
             txtSenha = new TextBox();
             btnEntrar = new Button();
+            btnCancelar = new Button();
             SuspendLayout();
             // 
             // txtSenha
@@ -41,18 +42,31 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.Location = new Point(323, 233);
+            btnEntrar.Location = new Point(250, 225);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(75, 23);
             btnEntrar.TabIndex = 1;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
+            btnEntrar.Click += btnEntrar_Click_1;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(337, 225);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 2;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click_1;
             // 
             // FrmAdminLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCancelar);
             Controls.Add(btnEntrar);
             Controls.Add(txtSenha);
             Name = "FrmAdminLogin";
@@ -65,5 +79,6 @@
 
         private TextBox txtSenha;
         private Button btnEntrar;
+        private Button btnCancelar;
     }
 }
