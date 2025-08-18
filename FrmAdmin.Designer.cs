@@ -32,6 +32,9 @@
             btnLivros = new Button();
             btnEmprestimos = new Button();
             dgvDados = new DataGridView();
+            btnAdicionar = new Button();
+            btnEditar = new Button();
+            btnExcluir = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDados).BeginInit();
             SuspendLayout();
             // 
@@ -68,10 +71,38 @@
             // dgvDados
             // 
             dgvDados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDados.Location = new Point(131, 12);
+            dgvDados.Location = new Point(165, 24);
             dgvDados.Name = "dgvDados";
-            dgvDados.Size = new Size(657, 426);
+            dgvDados.Size = new Size(570, 350);
             dgvDados.TabIndex = 3;
+            // 
+            // btnAdicionar
+            // 
+            btnAdicionar.Location = new Point(423, 392);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Size = new Size(100, 46);
+            btnAdicionar.TabIndex = 4;
+            btnAdicionar.Text = "Adicionar";
+            btnAdicionar.UseVisualStyleBackColor = true;
+            btnAdicionar.Click += btnAdicionar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(529, 392);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(100, 46);
+            btnEditar.TabIndex = 5;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(635, 392);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(100, 46);
+            btnExcluir.TabIndex = 6;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
             // 
             // FrmAdmin
             // 
@@ -79,6 +110,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnExcluir);
+            Controls.Add(btnEditar);
+            Controls.Add(btnAdicionar);
             Controls.Add(dgvDados);
             Controls.Add(btnEmprestimos);
             Controls.Add(btnLivros);
@@ -95,5 +129,8 @@
         private Button btnLivros;
         private Button btnEmprestimos;
         private DataGridView dgvDados;
+        private Button btnAdicionar;
+        private Button btnEditar;
+        private Button btnExcluir;
     }
 }
