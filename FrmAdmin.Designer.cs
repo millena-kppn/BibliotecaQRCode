@@ -94,6 +94,7 @@
             btnEditar.TabIndex = 5;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
@@ -103,6 +104,7 @@
             btnExcluir.TabIndex = 6;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // FrmAdmin
             // 

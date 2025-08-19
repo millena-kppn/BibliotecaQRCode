@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 using BibliotecaQRCode.Data;
+using BibliotecaQRCode.Models;
 
 namespace BibliotecaQRCode
 {
@@ -13,11 +14,12 @@ namespace BibliotecaQRCode
         public FrmAdmin()
         {
             InitializeComponent();
-            PrepararGrid(); // chamar configuração do DataGridView
+            ConfigurarGrid(); // Configuração inicial do DataGridView
         }
 
+        // ==============================
         // MÉTODOS DE CARREGAMENTO
-
+        // ==============================
         private void CarregarLivros()
         {
             using (var db = new BibliotecaContext())
@@ -59,8 +61,10 @@ namespace BibliotecaQRCode
             entidadeAtual = "Emprestimo";
         }
 
-        // Configuração inicial do DataGridView
-        private void PrepararGrid()
+        // ==============================
+        // CONFIGURAÇÃO DO GRID
+        // ==============================
+        private void ConfigurarGrid()
         {
             dgvDados.AutoGenerateColumns = true;
             dgvDados.ReadOnly = true;
@@ -70,8 +74,20 @@ namespace BibliotecaQRCode
             dgvDados.AllowUserToDeleteRows = false;
             dgvDados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
-        // MÉTODOS DE AÇÃO
-        // BOTÕES
+
+        private void RecarregarGrid()
+        {
+            if (entidadeAtual == "Livro") CarregarLivros();
+            else if (entidadeAtual == "Aluno") CarregarAlunos();
+            else if (entidadeAtual == "Emprestimo") CarregarEmprestimos();
+        }
+
+        // ==============================
+        // BOTÕES DE SELEÇÃO
+        // ==============================
+
+
+        ///Colar aqui até o finnal
         private void btnAlunos_Click_1(object sender, EventArgs e)
         {
             CarregarAlunos();
@@ -87,11 +103,171 @@ namespace BibliotecaQRCode
             CarregarEmprestimos();
         }
 
-        //Adicionar Registro
-        //private void btnAdicionar_Click(object sender, EventArgs e)
-        //{
+        //end = final
 
-        //}
-        ///VERIFICAR PARA CONTINUAR DESENVOLVENDO
+        // ==============================
+        // BOTÃO ADICIONAR
+        // ==============================
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(entidadeAtual))
+            {
+                MessageBox.Show("Escolha primeiro: Livros, Alunos ou Empréstimos.");
+                return;
+            }
+
+            if (entidadeAtual == "Livro")
+            {
+                var dlg = new FrmLivroEditar();
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    using (var db = new BibliotecaContext())
+                    {
+                        var novo = new Livro
+                        {
+                            Titulo = dlg.Titulo,
+                            Autor = dlg.Autor,
+                            CodigoQR = dlg.CodigoQR
+                        };
+                        db.Livros.Add(novo);
+                        db.SaveChanges();
+                    }
+                    RecarregarGrid();
+                }
+            }
+            else if (entidadeAtual == "Aluno")
+            {
+                var dlg = new FrmAlunoEditar();
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    using (var db = new BibliotecaContext())
+                    {
+                        var novo = new Aluno
+                        {
+                            Nome = dlg.Nome,
+                            Matricula = dlg.Matricula
+                        };
+                        db.Alunos.Add(novo);
+                        db.SaveChanges();
+                    }
+                    RecarregarGrid();
+                }
+            }
+            else if (entidadeAtual == "Emprestimo")
+            {
+                MessageBox.Show("Para criar um empréstimo, use a tela de Empréstimo (Aluno/QR).");
+            }
+        }
+
+        // ==============================
+        // BOTÃO EDITAR
+        // ==============================
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvDados.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um registro.");
+                return;
+            }
+
+            int id = (int)dgvDados.CurrentRow.Cells["Id"].Value;
+
+            if (entidadeAtual == "Livro")
+            {
+                using (var db = new BibliotecaContext())
+                {
+                    var livro = db.Livros.Find(id);
+                    if (livro == null) return;
+
+                    var dlg = new FrmLivroEditar(livro);
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        livro.Titulo = dlg.Titulo;
+                        livro.Autor = dlg.Autor;
+                        livro.CodigoQR = dlg.CodigoQR;
+                        db.SaveChanges();
+                    }
+                }
+                RecarregarGrid();
+            }
+            else if (entidadeAtual == "Aluno")
+            {
+                using (var db = new BibliotecaContext())
+                {
+                    var aluno = db.Alunos.Find(id);
+                    if (aluno == null) return;
+
+                    var dlg = new FrmAlunoEditar(aluno);
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        aluno.Nome = dlg.Nome;
+                        aluno.Matricula = dlg.Matricula;
+                        db.SaveChanges();
+                    }
+                }
+                RecarregarGrid();
+            }
+            else if (entidadeAtual == "Emprestimo")
+            {
+                var confirmar = MessageBox.Show("Marcar este empréstimo como 'Devolvido' agora?",
+                    "Editar Empréstimo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirmar == DialogResult.Yes)
+                {
+                    using (var db = new BibliotecaContext())
+                    {
+                        var emp = db.Emprestimos.Find(id);
+                        if (emp == null) return;
+
+                        emp.Status = "Devolvido";
+                        emp.DataDevolucao = DateTime.Now;
+                        db.SaveChanges();
+                    }
+                    RecarregarGrid();
+                }
+            }
+        }
+
+        // ==============================
+        // BOTÃO EXCLUIR
+        // ==============================
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (dgvDados.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um registro.");
+                return;
+            }
+
+            int id = (int)dgvDados.CurrentRow.Cells["Id"].Value;
+
+            var ok = MessageBox.Show("Tem certeza que deseja excluir?", "Confirmação",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (ok != DialogResult.Yes) return;
+
+            using (var db = new BibliotecaContext())
+            {
+                if (entidadeAtual == "Livro")
+                {
+                    var livro = db.Livros.Find(id);
+                    if (livro != null) db.Livros.Remove(livro);
+                }
+                else if (entidadeAtual == "Aluno")
+                {
+                    var aluno = db.Alunos.Find(id);
+                    if (aluno != null) db.Alunos.Remove(aluno);
+                }
+                else if (entidadeAtual == "Emprestimo")
+                {
+                    var emp = db.Emprestimos.Find(id);
+                    if (emp != null) db.Emprestimos.Remove(emp);
+                }
+
+                db.SaveChanges();
+            }
+            RecarregarGrid();
+        }
     }
 }
+
