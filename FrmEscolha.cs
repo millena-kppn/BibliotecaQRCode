@@ -22,7 +22,6 @@ namespace BibliotecaQRCode
             new FrmAdminLogin().ShowDialog();
             Show();
         }
-        //ate aqui
     }
 }
 

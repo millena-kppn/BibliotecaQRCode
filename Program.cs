@@ -24,6 +24,8 @@
 //TESTE PARA VER SE O CÓDIGO FUNCIONA
 using BibliotecaQRCode.Data;   // ajuste para o namespace correto
 using BibliotecaQRCode.Models; // ajuste também se necessário
+using System.Linq;
+
 
 namespace BibliotecaQRCode
 {

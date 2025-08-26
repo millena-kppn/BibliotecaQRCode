@@ -40,9 +40,10 @@
             // 
             // btnAlunos
             // 
-            btnAlunos.Location = new Point(12, 98);
+            btnAlunos.Location = new Point(19, 163);
+            btnAlunos.Margin = new Padding(5, 5, 5, 5);
             btnAlunos.Name = "btnAlunos";
-            btnAlunos.Size = new Size(113, 81);
+            btnAlunos.Size = new Size(178, 135);
             btnAlunos.TabIndex = 0;
             btnAlunos.Text = "Alunos";
             btnAlunos.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // btnLivros
             // 
-            btnLivros.Location = new Point(12, 185);
+            btnLivros.Location = new Point(19, 308);
+            btnLivros.Margin = new Padding(5, 5, 5, 5);
             btnLivros.Name = "btnLivros";
-            btnLivros.Size = new Size(113, 81);
+            btnLivros.Size = new Size(178, 135);
             btnLivros.TabIndex = 1;
             btnLivros.Text = "Livros";
             btnLivros.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // 
             // btnEmprestimos
             // 
-            btnEmprestimos.Location = new Point(12, 272);
+            btnEmprestimos.Location = new Point(19, 453);
+            btnEmprestimos.Margin = new Padding(5, 5, 5, 5);
             btnEmprestimos.Name = "btnEmprestimos";
-            btnEmprestimos.Size = new Size(113, 81);
+            btnEmprestimos.Size = new Size(178, 135);
             btnEmprestimos.TabIndex = 2;
             btnEmprestimos.Text = "Empréstimos";
             btnEmprestimos.UseVisualStyleBackColor = true;
@@ -71,16 +74,19 @@
             // dgvDados
             // 
             dgvDados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDados.Location = new Point(165, 24);
+            dgvDados.Location = new Point(259, 40);
+            dgvDados.Margin = new Padding(5, 5, 5, 5);
             dgvDados.Name = "dgvDados";
-            dgvDados.Size = new Size(570, 350);
+            dgvDados.RowHeadersWidth = 66;
+            dgvDados.Size = new Size(896, 583);
             dgvDados.TabIndex = 3;
             // 
             // btnAdicionar
             // 
-            btnAdicionar.Location = new Point(423, 392);
+            btnAdicionar.Location = new Point(665, 653);
+            btnAdicionar.Margin = new Padding(5, 5, 5, 5);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(100, 46);
+            btnAdicionar.Size = new Size(157, 77);
             btnAdicionar.TabIndex = 4;
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.UseVisualStyleBackColor = true;
@@ -88,9 +94,10 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(529, 392);
+            btnEditar.Location = new Point(831, 653);
+            btnEditar.Margin = new Padding(5, 5, 5, 5);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(100, 46);
+            btnEditar.Size = new Size(157, 77);
             btnEditar.TabIndex = 5;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
@@ -98,9 +105,10 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(635, 392);
+            btnExcluir.Location = new Point(998, 653);
+            btnExcluir.Margin = new Padding(5, 5, 5, 5);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(100, 46);
+            btnExcluir.Size = new Size(157, 77);
             btnExcluir.TabIndex = 6;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
@@ -108,10 +116,10 @@
             // 
             // FrmAdmin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1257, 750);
             Controls.Add(btnExcluir);
             Controls.Add(btnEditar);
             Controls.Add(btnAdicionar);
@@ -119,6 +127,7 @@
             Controls.Add(btnEmprestimos);
             Controls.Add(btnLivros);
             Controls.Add(btnAlunos);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "FrmAdmin";
             Text = "FrmAdmin";
             ((System.ComponentModel.ISupportInitialize)dgvDados).EndInit();

@@ -8,13 +8,12 @@ namespace BibliotecaQRCode
 {
     public partial class FrmAdmin : Form
     {
-        // Variável para armazenar a entidade atual (Alunos, Livros, Empréstimos)
         private string entidadeAtual = "";
 
         public FrmAdmin()
         {
             InitializeComponent();
-            ConfigurarGrid(); // Configuração inicial do DataGridView
+            ConfigurarGrid();
         }
 
         // ==============================
@@ -85,9 +84,6 @@ namespace BibliotecaQRCode
         // ==============================
         // BOTÕES DE SELEÇÃO
         // ==============================
-
-
-        ///Colar aqui até o finnal
         private void btnAlunos_Click_1(object sender, EventArgs e)
         {
             CarregarAlunos();
@@ -102,8 +98,6 @@ namespace BibliotecaQRCode
         {
             CarregarEmprestimos();
         }
-
-        //end = final
 
         // ==============================
         // BOTÃO ADICIONAR
@@ -155,7 +149,11 @@ namespace BibliotecaQRCode
             }
             else if (entidadeAtual == "Emprestimo")
             {
-                MessageBox.Show("Para criar um empréstimo, use a tela de Empréstimo (Aluno/QR).");
+                using (var dlg = new FrmEmprestimoEditar())
+                {
+                    if (dlg.ShowDialog(this) == DialogResult.OK)
+                        CarregarEmprestimos();
+                }
             }
         }
 
@@ -209,21 +207,10 @@ namespace BibliotecaQRCode
             }
             else if (entidadeAtual == "Emprestimo")
             {
-                var confirmar = MessageBox.Show("Marcar este empréstimo como 'Devolvido' agora?",
-                    "Editar Empréstimo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (confirmar == DialogResult.Yes)
+                using (var dlg = new FrmEmprestimoEditar(id))
                 {
-                    using (var db = new BibliotecaContext())
-                    {
-                        var emp = db.Emprestimos.Find(id);
-                        if (emp == null) return;
-
-                        emp.Status = "Devolvido";
-                        emp.DataDevolucao = DateTime.Now;
-                        db.SaveChanges();
-                    }
-                    RecarregarGrid();
+                    if (dlg.ShowDialog(this) == DialogResult.OK)
+                        CarregarEmprestimos();
                 }
             }
         }
@@ -270,4 +257,4 @@ namespace BibliotecaQRCode
         }
     }
 }
-
+//corrigido 

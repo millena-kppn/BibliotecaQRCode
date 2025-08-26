@@ -28,15 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEscolha));
             btnAdmin = new Button();
             btnAluno = new Button();
+            pictureBox1 = new PictureBox();
+            roundedButton1 = new RoundedButton();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnAdmin
             // 
-            btnAdmin.Location = new Point(280, 241);
+            btnAdmin.Location = new Point(440, 329);
+            btnAdmin.Margin = new Padding(5);
             btnAdmin.Name = "btnAdmin";
-            btnAdmin.Size = new Size(180, 82);
+            btnAdmin.Size = new Size(283, 137);
             btnAdmin.TabIndex = 1;
             btnAdmin.Text = "Administrador";
             btnAdmin.UseVisualStyleBackColor = true;
@@ -44,24 +49,53 @@
             // 
             // btnAluno
             // 
-            btnAluno.Location = new Point(280, 153);
+            btnAluno.Location = new Point(440, 182);
+            btnAluno.Margin = new Padding(5);
             btnAluno.Name = "btnAluno";
-            btnAluno.Size = new Size(180, 82);
+            btnAluno.Size = new Size(283, 137);
             btnAluno.TabIndex = 2;
             btnAluno.Text = "Aluno";
             btnAluno.UseVisualStyleBackColor = true;
             btnAluno.Click += btnAluno_Click_1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(1, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1255, 752);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
+            // roundedButton1
+            // 
+            roundedButton1.BackColor = SystemColors.ActiveBorder;
+            roundedButton1.CornerRadius = 12;
+            roundedButton1.FlatAppearance.BorderSize = 0;
+            roundedButton1.FlatStyle = FlatStyle.Flat;
+            roundedButton1.ForeColor = Color.White;
+            roundedButton1.Location = new Point(440, 61);
+            roundedButton1.Name = "roundedButton1";
+            roundedButton1.Size = new Size(283, 113);
+            roundedButton1.TabIndex = 4;
+            roundedButton1.Text = "roundedButton1";
+            roundedButton1.UseVisualStyleBackColor = false;
+            // 
             // FrmEscolha
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1257, 750);
+            Controls.Add(roundedButton1);
             Controls.Add(btnAluno);
             Controls.Add(btnAdmin);
+            Controls.Add(pictureBox1);
+            Margin = new Padding(5);
             Name = "FrmEscolha";
             Text = "FrmEscolha";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -69,5 +103,7 @@
 
         private Button btnAdmin;
         private Button btnAluno;
+        private PictureBox pictureBox1;
+        private RoundedButton roundedButton1;
     }
 }
