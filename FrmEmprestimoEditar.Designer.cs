@@ -99,7 +99,7 @@
             // lblDataemprestimo
             // 
             lblDataemprestimo.AutoSize = true;
-            lblDataemprestimo.Location = new Point(462, 86);
+            lblDataemprestimo.Location = new Point(462, 98);
             lblDataemprestimo.Name = "lblDataemprestimo";
             lblDataemprestimo.Size = new Size(156, 25);
             lblDataemprestimo.TabIndex = 6;
@@ -127,15 +127,17 @@
             // 
             // dtpEmprestimo
             // 
-            dtpEmprestimo.Location = new Point(462, 114);
+            dtpEmprestimo.CustomFormat = "dd/MM/yyyy";
+            dtpEmprestimo.Format = DateTimePickerFormat.Custom;
+            dtpEmprestimo.Location = new Point(462, 126);
             dtpEmprestimo.Name = "dtpEmprestimo";
-            dtpEmprestimo.Size = new Size(321, 33);
+            dtpEmprestimo.Size = new Size(156, 33);
             dtpEmprestimo.TabIndex = 10;
             // 
             // lblDevolucao
             // 
             lblDevolucao.AutoSize = true;
-            lblDevolucao.Location = new Point(462, 162);
+            lblDevolucao.Location = new Point(462, 180);
             lblDevolucao.Name = "lblDevolucao";
             lblDevolucao.Size = new Size(145, 25);
             lblDevolucao.TabIndex = 11;
@@ -143,9 +145,11 @@
             // 
             // dtpDevolucao
             // 
-            dtpDevolucao.Location = new Point(462, 193);
+            dtpDevolucao.CustomFormat = "dd/MM/yyyy";
+            dtpDevolucao.Format = DateTimePickerFormat.Custom;
+            dtpDevolucao.Location = new Point(462, 208);
             dtpDevolucao.Name = "dtpDevolucao";
-            dtpDevolucao.Size = new Size(321, 33);
+            dtpDevolucao.Size = new Size(156, 33);
             dtpDevolucao.TabIndex = 12;
             // 
             // FrmEmprestimoEditar

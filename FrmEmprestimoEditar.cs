@@ -76,20 +76,16 @@ namespace BibliotecaQRCode
                     emp = new Emprestimo();
                     db.Emprestimos.Add(emp);
                 }
-
                 emp.AlunoId = (int)cbAluno.SelectedValue;
                 emp.LivroId = (int)cbLivro.SelectedValue;
                 emp.DataEmprestimo = dtpEmprestimo.Value;
                 emp.DataDevolucao = dtpDevolucao.Value;
                 emp.Status = cbStatus.SelectedItem.ToString();
-
                 db.SaveChanges();
             }
-
             DialogResult = DialogResult.OK;
             Close();
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;

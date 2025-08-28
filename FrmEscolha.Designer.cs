@@ -32,7 +32,6 @@
             btnAdmin = new Button();
             btnAluno = new Button();
             pictureBox1 = new PictureBox();
-            roundedButton1 = new RoundedButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -68,27 +67,12 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
-            // roundedButton1
-            // 
-            roundedButton1.BackColor = SystemColors.ActiveBorder;
-            roundedButton1.CornerRadius = 12;
-            roundedButton1.FlatAppearance.BorderSize = 0;
-            roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(440, 61);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(283, 113);
-            roundedButton1.TabIndex = 4;
-            roundedButton1.Text = "roundedButton1";
-            roundedButton1.UseVisualStyleBackColor = false;
-            // 
             // FrmEscolha
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1257, 750);
-            Controls.Add(roundedButton1);
             Controls.Add(btnAluno);
             Controls.Add(btnAdmin);
             Controls.Add(pictureBox1);
@@ -104,6 +88,5 @@
         private Button btnAdmin;
         private Button btnAluno;
         private PictureBox pictureBox1;
-        private RoundedButton roundedButton1;
     }
 }
