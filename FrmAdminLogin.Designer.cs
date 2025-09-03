@@ -31,7 +31,7 @@
             txtSenha = new TextBox();
             btnEntrar = new Button();
             btnCancelar = new Button();
-            txtUsuario = new TextBox();
+            txtLogin = new TextBox();
             btnEsqueciSenha = new Button();
             SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             btnEntrar.TabIndex = 1;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
-            btnEntrar.Click += btnEntrar_Click_1;
+            btnEntrar.Click += btnEntrar_Click;
             // 
             // btnCancelar
             // 
@@ -63,14 +63,14 @@
             btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click_1;
+            btnCancelar.Click += btnCancelar_Click;
             // 
-            // txtUsuario
+            // txtLogin
             // 
-            txtUsuario.Location = new Point(485, 221);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(160, 33);
-            txtUsuario.TabIndex = 3;
+            txtLogin.Location = new Point(485, 221);
+            txtLogin.Name = "txtLogin";
+            txtLogin.Size = new Size(160, 33);
+            txtLogin.TabIndex = 3;
             // 
             // btnEsqueciSenha
             // 
@@ -89,7 +89,7 @@
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1257, 750);
             Controls.Add(btnEsqueciSenha);
-            Controls.Add(txtUsuario);
+            Controls.Add(txtLogin);
             Controls.Add(btnCancelar);
             Controls.Add(btnEntrar);
             Controls.Add(txtSenha);
@@ -105,7 +105,7 @@
         private TextBox txtSenha;
         private Button btnEntrar;
         private Button btnCancelar;
-        private TextBox txtUsuario;
+        private TextBox txtLogin;
         private Button btnEsqueciSenha;
     }
 }
