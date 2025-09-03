@@ -42,6 +42,11 @@ namespace BibliotecaQRCode
 
                 if (!db.Livros.Any())
                     db.Livros.Add(new Livro { Titulo = "Clean Code", Autor = "R. Martin", CodigoQR = "LIVRO-0001" });
+                //banco de dados admin 
+                if (!db.Admins.Any())
+                {
+                    db.Admins.Add(new Admin { Login = "admin", Senha = "1234" });
+                }
 
                 db.SaveChanges();
                 // TESTE AQUI

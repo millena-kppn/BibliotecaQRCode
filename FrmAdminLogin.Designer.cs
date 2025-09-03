@@ -31,20 +31,24 @@
             txtSenha = new TextBox();
             btnEntrar = new Button();
             btnCancelar = new Button();
+            txtUsuario = new TextBox();
+            btnEsqueciSenha = new Button();
             SuspendLayout();
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(312, 175);
+            txtSenha.Location = new Point(490, 292);
+            txtSenha.Margin = new Padding(5);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(100, 23);
+            txtSenha.Size = new Size(155, 33);
             txtSenha.TabIndex = 0;
             // 
             // btnEntrar
             // 
-            btnEntrar.Location = new Point(250, 225);
+            btnEntrar.Location = new Point(393, 375);
+            btnEntrar.Margin = new Padding(5);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(75, 23);
+            btnEntrar.Size = new Size(118, 38);
             btnEntrar.TabIndex = 1;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
@@ -52,23 +56,44 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(337, 225);
+            btnCancelar.Location = new Point(530, 375);
+            btnCancelar.Margin = new Padding(5);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.Size = new Size(118, 38);
             btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click_1;
             // 
+            // txtUsuario
+            // 
+            txtUsuario.Location = new Point(485, 221);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(160, 33);
+            txtUsuario.TabIndex = 3;
+            // 
+            // btnEsqueciSenha
+            // 
+            btnEsqueciSenha.Location = new Point(422, 451);
+            btnEsqueciSenha.Name = "btnEsqueciSenha";
+            btnEsqueciSenha.Size = new Size(210, 37);
+            btnEsqueciSenha.TabIndex = 4;
+            btnEsqueciSenha.Text = "Esqueci minha senha";
+            btnEsqueciSenha.UseVisualStyleBackColor = true;
+            btnEsqueciSenha.Click += btnEsqueciSenha_Click;
+            // 
             // FrmAdminLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1257, 750);
+            Controls.Add(btnEsqueciSenha);
+            Controls.Add(txtUsuario);
             Controls.Add(btnCancelar);
             Controls.Add(btnEntrar);
             Controls.Add(txtSenha);
+            Margin = new Padding(5);
             Name = "FrmAdminLogin";
             Text = "FrmAdmin";
             ResumeLayout(false);
@@ -80,5 +105,7 @@
         private TextBox txtSenha;
         private Button btnEntrar;
         private Button btnCancelar;
+        private TextBox txtUsuario;
+        private Button btnEsqueciSenha;
     }
 }

@@ -11,6 +11,8 @@ namespace BibliotecaQRCode.Data
         public DbSet<Aluno> Alunos => Set<Aluno>();
         public DbSet<Livro> Livros => Set<Livro>();
         public DbSet<Emprestimo> Emprestimos => Set<Emprestimo>();
+        public DbSet<Admin> Admins { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
