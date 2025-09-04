@@ -34,6 +34,7 @@
             btnCancelar = new Button();
             lblAluno = new Label();
             lblMatricula = new Label();
+            cmbCurso = new ComboBox();
             SuspendLayout();
             // 
             // txtNome
@@ -88,12 +89,22 @@
             lblMatricula.TabIndex = 5;
             lblMatricula.Text = "Matricula";
             // 
+            // cmbCurso
+            // 
+            cmbCurso.FormattingEnabled = true;
+            cmbCurso.Items.AddRange(new object[] { "Administração", "Ciência da Computação", "Direito", "Jornalismo", "Medicina", "Analise e Desenvolvimento de Sistemas" });
+            cmbCurso.Location = new Point(369, 145);
+            cmbCurso.Name = "cmbCurso";
+            cmbCurso.Size = new Size(171, 23);
+            cmbCurso.TabIndex = 6;
+            // 
             // FrmAlunoEditar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmbCurso);
             Controls.Add(lblMatricula);
             Controls.Add(lblAluno);
             Controls.Add(btnCancelar);
@@ -114,5 +125,6 @@
         private Button btnCancelar;
         private Label lblAluno;
         private Label lblMatricula;
+        private ComboBox cmbCurso;
     }
 }

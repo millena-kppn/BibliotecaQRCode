@@ -20,6 +20,7 @@ namespace BibliotecaQRCode
         {
             txtNome.Text = aluno.Nome;
             txtMatricula.Text = aluno.Matricula;
+            cmbCurso.SelectedItem?.ToString();
         }
         private void btnOK_Click_1(object sender, EventArgs e)
         {
