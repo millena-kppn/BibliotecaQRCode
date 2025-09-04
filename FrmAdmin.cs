@@ -35,7 +35,7 @@ namespace BibliotecaQRCode
             using (var db = new BibliotecaContext())
             {
                 dgvDados.DataSource = db.Alunos
-                    .Select(a => new { a.Id, a.Nome, a.Matricula })
+                    .Select(a => new { a.Id, a.Nome, a.Matricula, a.Curso })
                     .ToList();
             }
             entidadeAtual = "Aluno";
