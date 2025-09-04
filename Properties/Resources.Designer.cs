@@ -59,5 +59,15 @@ namespace BibliotecaQRCode.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap livros_capa_02 {
+            get {
+                object obj = ResourceManager.GetObject("livros-capa-02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
