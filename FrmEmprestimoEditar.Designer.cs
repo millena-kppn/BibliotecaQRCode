@@ -18,194 +18,256 @@ namespace BibliotecaQRCode
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-
-            // ----------------------------
-            // Controles
-            // ----------------------------
-            this.tableMain = new TableLayoutPanel();
-            this.innerLayout = new TableLayoutPanel();
-            this.flowButtons = new FlowLayoutPanel();
-
-            this.lblAluno = new Label();
-            this.lblLivro = new Label();
-            this.lblStatus = new Label();
-            this.lblDataEmprestimo = new Label();
-            this.lblDevolucao = new Label();
-
-            this.cbAluno = new ComboBox();
-            this.cbLivro = new ComboBox();
-            this.cbStatus = new ComboBox();
-
-            this.dtpEmprestimo = new DateTimePicker();
-            this.dtpDevolucao = new DateTimePicker();
-
-            this.btnSalvar = new Button();
-            this.btnCancelar = new Button();
-
-            this.SuspendLayout();
-
-            // ----------------------------
+            tableMain = new TableLayoutPanel();
+            panelContent = new Panel();
+            innerLayout = new TableLayoutPanel();
+            lblAluno = new Label();
+            txtAluno = new TextBox();
+            lblLivro = new Label();
+            txtLivro = new TextBox();
+            lblDataEmprestimo = new Label();
+            dtpEmprestimo = new DateTimePicker();
+            lblDataDevolucao = new Label();
+            dtpDevolucao = new DateTimePicker();
+            flowButtons = new FlowLayoutPanel();
+            btnSalvar = new Button();
+            btnCancelar = new Button();
+            tableMain.SuspendLayout();
+            panelContent.SuspendLayout();
+            innerLayout.SuspendLayout();
+            flowButtons.SuspendLayout();
+            SuspendLayout();
+            // 
             // tableMain
-            // ----------------------------
-            this.tableMain.ColumnCount = 1;
-            this.tableMain.RowCount = 3;
-            this.tableMain.Dock = DockStyle.Fill;
-            this.tableMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            this.tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 10F)); // Topo (opcional)
-            this.tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 80F)); // Conteúdo
-            this.tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 10F)); // Botões
-            this.tableMain.Padding = new Padding(12);
-
-            // ----------------------------
-            // innerLayout (Conteúdo do Formulário)
-            // ----------------------------
-            this.innerLayout.ColumnCount = 2;
-            this.innerLayout.RowCount = 5;
-            this.innerLayout.Dock = DockStyle.Fill;
-            this.innerLayout.AutoSize = true;
-            this.innerLayout.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            this.innerLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            this.innerLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
-            for (int i = 0; i < 5; i++)
-                this.innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            this.innerLayout.Padding = new Padding(12);
-            this.innerLayout.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-
-            // ----------------------------
-            // Labels
-            // ----------------------------
-            Font lblFont = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-
-            this.lblAluno.Text = "Aluno:";
-            this.lblAluno.Font = lblFont;
-            this.lblAluno.Anchor = AnchorStyles.Left;
-
-            this.lblLivro.Text = "Livro:";
-            this.lblLivro.Font = lblFont;
-            this.lblLivro.Anchor = AnchorStyles.Left;
-
-            this.lblStatus.Text = "Status:";
-            this.lblStatus.Font = lblFont;
-            this.lblStatus.Anchor = AnchorStyles.Left;
-
-            this.lblDataEmprestimo.Text = "Data Empréstimo:";
-            this.lblDataEmprestimo.Font = lblFont;
-            this.lblDataEmprestimo.Anchor = AnchorStyles.Left;
-
-            this.lblDevolucao.Text = "Data Devolução:";
-            this.lblDevolucao.Font = lblFont;
-            this.lblDevolucao.Anchor = AnchorStyles.Left;
-
-            // ----------------------------
-            // ComboBoxes
-            // ----------------------------
-            this.cbAluno.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cbAluno.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-
-            this.cbLivro.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cbLivro.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-
-            this.cbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cbStatus.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-
-            // ----------------------------
-            // DateTimePickers
-            // ----------------------------
-            this.dtpEmprestimo.Format = DateTimePickerFormat.Custom;
-            this.dtpEmprestimo.CustomFormat = "dd/MM/yyyy";
-            this.dtpEmprestimo.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-
-            this.dtpDevolucao.Format = DateTimePickerFormat.Custom;
-            this.dtpDevolucao.CustomFormat = "dd/MM/yyyy";
-            this.dtpDevolucao.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-
-            // ----------------------------
-            // Botões
-            // ----------------------------
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            this.btnSalvar.BackColor = Color.FromArgb(70, 130, 180);
-            this.btnSalvar.ForeColor = Color.White;
-            this.btnSalvar.FlatStyle = FlatStyle.Flat;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.Size = new Size(120, 40);
-            this.btnSalvar.Click += new EventHandler(this.btnSalvar_Click);
-
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            this.btnCancelar.BackColor = Color.Gray;
-            this.btnCancelar.ForeColor = Color.White;
-            this.btnCancelar.FlatStyle = FlatStyle.Flat;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Size = new Size(120, 40);
-            this.btnCancelar.Click += new EventHandler(this.btnCancelar_Click);
-
-            this.flowButtons.FlowDirection = FlowDirection.LeftToRight;
-            this.flowButtons.WrapContents = false;
-            this.flowButtons.AutoSize = true;
-            this.flowButtons.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            this.flowButtons.Anchor = AnchorStyles.None; // centraliza
-            this.flowButtons.Controls.Add(this.btnSalvar);
-            this.flowButtons.Controls.Add(this.btnCancelar);
-
-            // ----------------------------
-            // Adiciona controles ao innerLayout
-            // ----------------------------
-            this.innerLayout.Controls.Add(lblAluno, 0, 0);
-            this.innerLayout.Controls.Add(cbAluno, 1, 0);
-            this.innerLayout.Controls.Add(lblLivro, 0, 1);
-            this.innerLayout.Controls.Add(cbLivro, 1, 1);
-            this.innerLayout.Controls.Add(lblStatus, 0, 2);
-            this.innerLayout.Controls.Add(cbStatus, 1, 2);
-            this.innerLayout.Controls.Add(lblDataEmprestimo, 0, 3);
-            this.innerLayout.Controls.Add(dtpEmprestimo, 1, 3);
-            this.innerLayout.Controls.Add(lblDevolucao, 0, 4);
-            this.innerLayout.Controls.Add(dtpDevolucao, 1, 4);
-
-            // ----------------------------
-            // Adiciona innerLayout e flowButtons ao tableMain
-            // ----------------------------
-            this.tableMain.Controls.Add(innerLayout, 0, 1);
-            this.tableMain.Controls.Add(flowButtons, 0, 2);
-
-            // ----------------------------
-            // FrmEmprestimoEditar (form)
-            // ----------------------------
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.LightSteelBlue;
-            this.ClientSize = new Size(800, 500);
-            this.Controls.Add(this.tableMain);
-            this.MinimumSize = new Size(650, 400);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "Editar Empréstimo";
-            this.FormBorderStyle = FormBorderStyle.Sizable;
-
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            tableMain.ColumnCount = 1;
+            tableMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableMain.Controls.Add(panelContent, 0, 1);
+            tableMain.Dock = DockStyle.Fill;
+            tableMain.Location = new Point(0, 0);
+            tableMain.Name = "tableMain";
+            tableMain.Padding = new Padding(12);
+            tableMain.RowCount = 3;
+            tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableMain.RowStyles.Add(new RowStyle());
+            tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            tableMain.Size = new Size(800, 450);
+            tableMain.TabIndex = 0;
+            // 
+            // panelContent
+            // 
+            panelContent.AutoSize = true;
+            panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelContent.Controls.Add(innerLayout);
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(15, 37);
+            panelContent.MinimumSize = new Size(400, 300);
+            panelContent.Name = "panelContent";
+            panelContent.Padding = new Padding(12);
+            panelContent.Size = new Size(770, 306);
+            panelContent.TabIndex = 0;
+            // 
+            // innerLayout
+            // 
+            innerLayout.AutoSize = true;
+            innerLayout.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            innerLayout.ColumnCount = 1;
+            innerLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            innerLayout.Controls.Add(lblAluno, 0, 0);
+            innerLayout.Controls.Add(txtAluno, 0, 1);
+            innerLayout.Controls.Add(lblLivro, 0, 2);
+            innerLayout.Controls.Add(txtLivro, 0, 3);
+            innerLayout.Controls.Add(lblDataEmprestimo, 0, 4);
+            innerLayout.Controls.Add(dtpEmprestimo, 0, 5);
+            innerLayout.Controls.Add(lblDataDevolucao, 0, 6);
+            innerLayout.Controls.Add(dtpDevolucao, 0, 7);
+            innerLayout.Controls.Add(flowButtons, 0, 8);
+            innerLayout.Dock = DockStyle.Fill;
+            innerLayout.Location = new Point(12, 12);
+            innerLayout.Name = "innerLayout";
+            innerLayout.Padding = new Padding(12);
+            innerLayout.RowCount = 9;
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.Size = new Size(746, 282);
+            innerLayout.TabIndex = 0;
+            // 
+            // lblAluno
+            // 
+            lblAluno.AutoSize = true;
+            lblAluno.Dock = DockStyle.Fill;
+            lblAluno.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblAluno.Location = new Point(12, 18);
+            lblAluno.Margin = new Padding(0, 6, 0, 2);
+            lblAluno.Name = "lblAluno";
+            lblAluno.Size = new Size(722, 21);
+            lblAluno.TabIndex = 0;
+            lblAluno.Text = "Aluno:";
+            // 
+            // txtAluno
+            // 
+            txtAluno.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtAluno.Font = new Font("Segoe UI", 11F);
+            txtAluno.Location = new Point(12, 41);
+            txtAluno.Margin = new Padding(0, 0, 0, 12);
+            txtAluno.Name = "txtAluno";
+            txtAluno.Size = new Size(722, 27);
+            txtAluno.TabIndex = 1;
+            // 
+            // lblLivro
+            // 
+            lblLivro.AutoSize = true;
+            lblLivro.Dock = DockStyle.Fill;
+            lblLivro.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblLivro.Location = new Point(12, 86);
+            lblLivro.Margin = new Padding(0, 6, 0, 2);
+            lblLivro.Name = "lblLivro";
+            lblLivro.Size = new Size(722, 21);
+            lblLivro.TabIndex = 2;
+            lblLivro.Text = "Livro:";
+            // 
+            // txtLivro
+            // 
+            txtLivro.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtLivro.Font = new Font("Segoe UI", 11F);
+            txtLivro.Location = new Point(12, 109);
+            txtLivro.Margin = new Padding(0, 0, 0, 12);
+            txtLivro.Name = "txtLivro";
+            txtLivro.Size = new Size(722, 27);
+            txtLivro.TabIndex = 3;
+            // 
+            // lblDataEmprestimo
+            // 
+            lblDataEmprestimo.AutoSize = true;
+            lblDataEmprestimo.Dock = DockStyle.Fill;
+            lblDataEmprestimo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblDataEmprestimo.Location = new Point(12, 154);
+            lblDataEmprestimo.Margin = new Padding(0, 6, 0, 2);
+            lblDataEmprestimo.Name = "lblDataEmprestimo";
+            lblDataEmprestimo.Size = new Size(722, 21);
+            lblDataEmprestimo.TabIndex = 4;
+            lblDataEmprestimo.Text = "Data Empréstimo:";
+            // 
+            // dtpEmprestimo
+            // 
+            dtpEmprestimo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dtpEmprestimo.Font = new Font("Segoe UI", 11F);
+            dtpEmprestimo.Location = new Point(12, 177);
+            dtpEmprestimo.Margin = new Padding(0, 0, 0, 12);
+            dtpEmprestimo.Name = "dtpEmprestimo";
+            dtpEmprestimo.Size = new Size(722, 27);
+            dtpEmprestimo.TabIndex = 5;
+            // 
+            // lblDataDevolucao
+            // 
+            lblDataDevolucao.AutoSize = true;
+            lblDataDevolucao.Dock = DockStyle.Fill;
+            lblDataDevolucao.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblDataDevolucao.Location = new Point(12, 216);
+            lblDataDevolucao.Margin = new Padding(0, 6, 0, 2);
+            lblDataDevolucao.Name = "lblDataDevolucao";
+            lblDataDevolucao.Size = new Size(722, 21);
+            lblDataDevolucao.TabIndex = 6;
+            lblDataDevolucao.Text = "Data Devolução:";
+            // 
+            // dtpDevolucao
+            // 
+            dtpDevolucao.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dtpDevolucao.Font = new Font("Segoe UI", 11F);
+            dtpDevolucao.Location = new Point(12, 239);
+            dtpDevolucao.Margin = new Padding(0, 0, 0, 12);
+            dtpDevolucao.Name = "dtpDevolucao";
+            dtpDevolucao.Size = new Size(722, 27);
+            dtpDevolucao.TabIndex = 7;
+            // 
+            // flowButtons
+            // 
+            flowButtons.Anchor = AnchorStyles.Top;
+            flowButtons.AutoSize = true;
+            flowButtons.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowButtons.Controls.Add(btnSalvar);
+            flowButtons.Controls.Add(btnCancelar);
+            flowButtons.Location = new Point(267, 291);
+            flowButtons.Margin = new Padding(0, 12, 0, 0);
+            flowButtons.Name = "flowButtons";
+            flowButtons.Size = new Size(212, 42);
+            flowButtons.TabIndex = 8;
+            flowButtons.WrapContents = false;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.BackColor = Color.FromArgb(70, 130, 180);
+            btnSalvar.FlatAppearance.BorderSize = 0;
+            btnSalvar.FlatStyle = FlatStyle.Flat;
+            btnSalvar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnSalvar.ForeColor = Color.White;
+            btnSalvar.Location = new Point(3, 3);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(100, 36);
+            btnSalvar.TabIndex = 0;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = false;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.Gray;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(109, 3);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(100, 36);
+            btnCancelar.TabIndex = 1;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // FrmEmprestimoEditar
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
+            ClientSize = new Size(800, 450);
+            Controls.Add(tableMain);
+            MinimumSize = new Size(600, 400);
+            Name = "FrmEmprestimoEditar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Editar Empréstimo";
+            tableMain.ResumeLayout(false);
+            tableMain.PerformLayout();
+            panelContent.ResumeLayout(false);
+            panelContent.PerformLayout();
+            innerLayout.ResumeLayout(false);
+            innerLayout.PerformLayout();
+            flowButtons.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel tableMain;
+        private Panel panelContent;
         private TableLayoutPanel innerLayout;
-        private FlowLayoutPanel flowButtons;
-
         private Label lblAluno;
+        private TextBox txtAluno;
         private Label lblLivro;
-        private Label lblStatus;
+        private TextBox txtLivro;
         private Label lblDataEmprestimo;
-        private Label lblDevolucao;
-
-        private ComboBox cbAluno;
-        private ComboBox cbLivro;
-        private ComboBox cbStatus;
-
         private DateTimePicker dtpEmprestimo;
+        private Label lblDataDevolucao;
         private DateTimePicker dtpDevolucao;
-
+        private FlowLayoutPanel flowButtons;
         private Button btnSalvar;
         private Button btnCancelar;
     }
 }
+

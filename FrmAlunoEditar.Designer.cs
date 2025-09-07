@@ -1,16 +1,10 @@
-﻿namespace BibliotecaQRCode
+﻿//aqui
+namespace BibliotecaQRCode
 {
     partial class FrmAlunoEditar
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,91 +16,192 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
+            tableMain = new TableLayoutPanel();
+            panelContent = new Panel();
+            innerLayout = new TableLayoutPanel();
+            lblNome = new Label();
             txtNome = new TextBox();
-            txtMatricula = new TextBox();
-            btnOK = new Button();
-            btnCancelar = new Button();
-            lblAluno = new Label();
             lblMatricula = new Label();
-            cmbCurso = new ComboBox();
+            txtMatricula = new TextBox();
             lblCurso = new Label();
+            txtCurso = new TextBox();
+            flowButtons = new FlowLayoutPanel();
+            btnSalvar = new Button();
+            btnCancelar = new Button();
+            tableMain.SuspendLayout();
+            panelContent.SuspendLayout();
+            innerLayout.SuspendLayout();
+            flowButtons.SuspendLayout();
             SuspendLayout();
+            // 
+            // tableMain
+            // 
+            tableMain.ColumnCount = 1;
+            tableMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableMain.Controls.Add(panelContent, 0, 1);
+            tableMain.Dock = DockStyle.Fill;
+            tableMain.Location = new Point(0, 0);
+            tableMain.Name = "tableMain";
+            tableMain.Padding = new Padding(12);
+            tableMain.RowCount = 3;
+            tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableMain.RowStyles.Add(new RowStyle());
+            tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            tableMain.Size = new Size(800, 450);
+            tableMain.TabIndex = 0;
+            // 
+            // panelContent
+            // 
+            panelContent.AutoSize = true;
+            panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelContent.Controls.Add(innerLayout);
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(15, 37);
+            panelContent.MinimumSize = new Size(400, 250);
+            panelContent.Name = "panelContent";
+            panelContent.Padding = new Padding(12);
+            panelContent.Size = new Size(770, 306);
+            panelContent.TabIndex = 0;
+            // 
+            // innerLayout
+            // 
+            innerLayout.AutoSize = true;
+            innerLayout.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            innerLayout.ColumnCount = 1;
+            innerLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            innerLayout.Controls.Add(lblNome, 0, 0);
+            innerLayout.Controls.Add(txtNome, 0, 1);
+            innerLayout.Controls.Add(lblMatricula, 0, 2);
+            innerLayout.Controls.Add(txtMatricula, 0, 3);
+            innerLayout.Controls.Add(lblCurso, 0, 4);
+            innerLayout.Controls.Add(txtCurso, 0, 5);
+            innerLayout.Controls.Add(flowButtons, 0, 6);
+            innerLayout.Dock = DockStyle.Fill;
+            innerLayout.Location = new Point(12, 12);
+            innerLayout.Name = "innerLayout";
+            innerLayout.Padding = new Padding(12);
+            innerLayout.RowCount = 7;
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.Size = new Size(746, 282);
+            innerLayout.TabIndex = 0;
+            // 
+            // lblNome
+            // 
+            lblNome.AutoSize = true;
+            lblNome.Dock = DockStyle.Fill;
+            lblNome.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblNome.Location = new Point(12, 18);
+            lblNome.Margin = new Padding(0, 6, 0, 2);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(722, 21);
+            lblNome.TabIndex = 0;
+            lblNome.Text = "Nome:";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(215, 110);
+            txtNome.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtNome.Font = new Font("Segoe UI", 11F);
+            txtNome.Location = new Point(12, 41);
+            txtNome.Margin = new Padding(0, 0, 0, 12);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(100, 23);
-            txtNome.TabIndex = 0;
-            // 
-            // txtMatricula
-            // 
-            txtMatricula.Location = new Point(215, 163);
-            txtMatricula.Name = "txtMatricula";
-            txtMatricula.Size = new Size(100, 23);
-            txtMatricula.TabIndex = 1;
-            // 
-            // btnOK
-            // 
-            btnOK.Location = new Point(324, 256);
-            btnOK.Name = "btnOK";
-            btnOK.Size = new Size(75, 23);
-            btnOK.TabIndex = 2;
-            btnOK.Text = "OK";
-            btnOK.UseVisualStyleBackColor = true;
-            btnOK.Click += btnOK_Click_1;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(434, 256);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 3;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click_1;
-            // 
-            // lblAluno
-            // 
-            lblAluno.AutoSize = true;
-            lblAluno.Location = new Point(215, 92);
-            lblAluno.Name = "lblAluno";
-            lblAluno.Size = new Size(39, 15);
-            lblAluno.TabIndex = 4;
-            lblAluno.Text = "Aluno";
+            txtNome.Size = new Size(722, 27);
+            txtNome.TabIndex = 1;
             // 
             // lblMatricula
             // 
             lblMatricula.AutoSize = true;
-            lblMatricula.Location = new Point(216, 145);
+            lblMatricula.Dock = DockStyle.Fill;
+            lblMatricula.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblMatricula.Location = new Point(12, 86);
+            lblMatricula.Margin = new Padding(0, 6, 0, 2);
             lblMatricula.Name = "lblMatricula";
-            lblMatricula.Size = new Size(57, 15);
-            lblMatricula.TabIndex = 5;
-            lblMatricula.Text = "Matricula";
+            lblMatricula.Size = new Size(722, 21);
+            lblMatricula.TabIndex = 2;
+            lblMatricula.Text = "Matrícula:";
             // 
-            // cmbCurso
+            // txtMatricula
             // 
-            cmbCurso.FormattingEnabled = true;
-            cmbCurso.Items.AddRange(new object[] { "Administração", "Ciência da Computação", "Direito", "Jornalismo", "Medicina", "Analise e Desenvolvimento de Sistemas" });
-            cmbCurso.Location = new Point(369, 145);
-            cmbCurso.Name = "cmbCurso";
-            cmbCurso.Size = new Size(171, 23);
-            cmbCurso.TabIndex = 6;
+            txtMatricula.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtMatricula.Font = new Font("Segoe UI", 11F);
+            txtMatricula.Location = new Point(12, 109);
+            txtMatricula.Margin = new Padding(0, 0, 0, 12);
+            txtMatricula.Name = "txtMatricula";
+            txtMatricula.Size = new Size(722, 27);
+            txtMatricula.TabIndex = 3;
             // 
             // lblCurso
             // 
             lblCurso.AutoSize = true;
-            lblCurso.Location = new Point(369, 127);
+            lblCurso.Dock = DockStyle.Fill;
+            lblCurso.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblCurso.Location = new Point(12, 154);
+            lblCurso.Margin = new Padding(0, 6, 0, 2);
             lblCurso.Name = "lblCurso";
-            lblCurso.Size = new Size(38, 15);
-            lblCurso.TabIndex = 7;
-            lblCurso.Text = "Curso";
+            lblCurso.Size = new Size(722, 21);
+            lblCurso.TabIndex = 4;
+            lblCurso.Text = "Curso:";
+            // 
+            // txtCurso
+            // 
+            txtCurso.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtCurso.Font = new Font("Segoe UI", 11F);
+            txtCurso.Location = new Point(12, 177);
+            txtCurso.Margin = new Padding(0, 0, 0, 12);
+            txtCurso.Name = "txtCurso";
+            txtCurso.Size = new Size(722, 27);
+            txtCurso.TabIndex = 5;
+            // 
+            // flowButtons
+            // 
+            flowButtons.Anchor = AnchorStyles.Top;
+            flowButtons.AutoSize = true;
+            flowButtons.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowButtons.Controls.Add(btnSalvar);
+            flowButtons.Controls.Add(btnCancelar);
+            flowButtons.Location = new Point(267, 228);
+            flowButtons.Margin = new Padding(0, 12, 0, 0);
+            flowButtons.Name = "flowButtons";
+            flowButtons.Size = new Size(212, 42);
+            flowButtons.TabIndex = 6;
+            flowButtons.WrapContents = false;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.BackColor = Color.FromArgb(70, 130, 180);
+            btnSalvar.FlatAppearance.BorderSize = 0;
+            btnSalvar.FlatStyle = FlatStyle.Flat;
+            btnSalvar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnSalvar.ForeColor = Color.White;
+            btnSalvar.Location = new Point(3, 3);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(100, 36);
+            btnSalvar.TabIndex = 0;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = false;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.Gray;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(109, 3);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(100, 36);
+            btnCancelar.TabIndex = 1;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // FrmAlunoEditar
             // 
@@ -114,29 +209,34 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(800, 450);
-            Controls.Add(lblCurso);
-            Controls.Add(cmbCurso);
-            Controls.Add(lblMatricula);
-            Controls.Add(lblAluno);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnOK);
-            Controls.Add(txtMatricula);
-            Controls.Add(txtNome);
+            Controls.Add(tableMain);
+            MinimumSize = new Size(600, 400);
             Name = "FrmAlunoEditar";
-            Text = "FrmAlunoEditar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Editar Aluno";
+            tableMain.ResumeLayout(false);
+            tableMain.PerformLayout();
+            panelContent.ResumeLayout(false);
+            panelContent.PerformLayout();
+            innerLayout.ResumeLayout(false);
+            innerLayout.PerformLayout();
+            flowButtons.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
+        private TableLayoutPanel tableMain;
+        private Panel panelContent;
+        private Label lblNome;
+        private Label lblMatricula;
+        private Label lblCurso;
         private TextBox txtNome;
         private TextBox txtMatricula;
-        private Button btnOK;
+        private TextBox txtCurso;
+        private FlowLayoutPanel flowButtons;
+        private Button btnSalvar;
         private Button btnCancelar;
-        private Label lblAluno;
-        private Label lblMatricula;
-        private ComboBox cmbCurso;
-        private Label lblCurso;
+        private TableLayoutPanel innerLayout;
     }
 }

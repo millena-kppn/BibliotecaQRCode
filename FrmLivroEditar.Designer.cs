@@ -324,7 +324,7 @@ namespace BibliotecaQRCode
             btnOK.Name = "btnOK";
             btnOK.Size = new Size(100, 36);
             btnOK.TabIndex = 0;
-            btnOK.Text = "OK";
+            btnOK.Text = "Salvar";
             btnOK.UseVisualStyleBackColor = false;
             btnOK.Click += btnOK_Click_1;
             // 

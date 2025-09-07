@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+//aqui
+using System;
 using System.Linq;
 using System.Windows.Forms;
 using BibliotecaQRCode.Data;
@@ -15,13 +17,13 @@ namespace BibliotecaQRCode
             InitializeComponent();
             _aluno = aluno;
         }
-        //aqui
+
         private void FrmEmprestimo_Load_1(object sender, EventArgs e)
         {
             lblAluno.Text = $"Aluno: {_aluno.Nome} ({_aluno.Matricula})";
             txtCodigoQR.Focus();
         }
-        //ate aqui
+
         private bool AlunoTemAtraso()
         {
             using var db = new BibliotecaContext();
@@ -31,6 +33,7 @@ namespace BibliotecaQRCode
                 e.Status == "Em andamento" &&
                 e.DataDevolucao < agora);
         }
+
         // scanners costumam enviar ENTER ao final da leitura
         private void txtCodigoQR_KeyDown_1(object sender, KeyEventArgs e)
         {
@@ -41,6 +44,7 @@ namespace BibliotecaQRCode
                 txtCodigoQR.Clear();
             }
         }
+
         private void ProcessarCodigo(string codigoQR)
         {
             if (string.IsNullOrWhiteSpace(codigoQR)) return;
@@ -87,11 +91,24 @@ namespace BibliotecaQRCode
 
             MessageBox.Show($"Empréstimo registrado!\n\nLivro: {livro.Titulo}\nDevolver até: {devolucao:dd/MM/yyyy}");
         }
-        //aqui
+
         private void btnDevolver_Click_1(object sender, EventArgs e)
         {
             new FrmDevolucao().ShowDialog();
         }
-        //ate aqui
+
+        // Novo botão OK para processar o empréstimo sem precisar dar ENTER
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            string codigoQR = txtCodigoQR.Text.Trim();
+            if (string.IsNullOrWhiteSpace(codigoQR))
+            {
+                MessageBox.Show("Por favor, bip o livro antes de confirmar.");
+                return;
+            }
+
+            ProcessarCodigo(codigoQR);
+            txtCodigoQR.Clear();
+        }
     }
 }

@@ -95,69 +95,80 @@ namespace BibliotecaQRCode
 
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new TableLayoutPanel();
-            this.btnAluno = new Button();
-            this.btnAdmin = new Button();
-            this.SuspendLayout();
-            // 
-            // FrmEscolha
-            // 
-            this.AutoScaleDimensions = new SizeF(11F, 25F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.White;
-            this.BackgroundImage = Properties.Resources.livros_capa_02;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            this.ClientSize = new Size(900, 600);
-            this.MinimumSize = new Size(600, 400);
-            this.Name = "FrmEscolha";
-            this.Text = "Escolha o tipo de acesso";
-            this.StartPosition = FormStartPosition.CenterScreen;
-
+            tableLayoutPanel1 = new TableLayoutPanel();
+            btnAluno = new Button();
+            btnAdmin = new Button();
+            tableLayoutPanel1.SuspendLayout();
+            SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1 = new TableLayoutPanel();
-            this.tableLayoutPanel1.Dock = DockStyle.Fill;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-
+            tableLayoutPanel1.BackColor = Color.LightSteelBlue;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Controls.Add(btnAluno, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnAdmin, 0, 2);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tableLayoutPanel1.Size = new Size(573, 360);
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // btnAluno
             // 
-            this.btnAluno.Dock = DockStyle.Fill;
-            this.btnAluno.Text = "Aluno";
-            this.btnAluno.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            this.btnAluno.BackColor = Color.FromArgb(52, 152, 219);
-            this.btnAluno.ForeColor = Color.White;
-            this.btnAluno.FlatStyle = FlatStyle.Flat;
-            this.btnAluno.FlatAppearance.BorderSize = 0;
-            this.btnAluno.Margin = new Padding(40, 10, 40, 10);
-            this.btnAluno.Click += new EventHandler(this.btnAluno_Click);
-
+            btnAluno.BackColor = Color.FromArgb(52, 152, 219);
+            btnAluno.Dock = DockStyle.Fill;
+            btnAluno.FlatAppearance.BorderSize = 0;
+            btnAluno.FlatStyle = FlatStyle.Flat;
+            btnAluno.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            btnAluno.ForeColor = Color.White;
+            btnAluno.Location = new Point(25, 6);
+            btnAluno.Margin = new Padding(25, 6, 25, 6);
+            btnAluno.Name = "btnAluno";
+            btnAluno.Size = new Size(523, 132);
+            btnAluno.TabIndex = 0;
+            btnAluno.Text = "Aluno";
+            btnAluno.UseVisualStyleBackColor = false;
+            btnAluno.Click += btnAluno_Click;
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Dock = DockStyle.Fill;
-            this.btnAdmin.Text = "Administrador";
-            this.btnAdmin.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            this.btnAdmin.BackColor = Color.FromArgb(231, 76, 60);
-            this.btnAdmin.ForeColor = Color.White;
-            this.btnAdmin.FlatStyle = FlatStyle.Flat;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.Margin = new Padding(40, 10, 40, 10);
-            this.btnAdmin.Click += new EventHandler(this.btnAdmin_Click);
-
+            btnAdmin.BackColor = Color.FromArgb(231, 76, 60);
+            btnAdmin.Dock = DockStyle.Fill;
+            btnAdmin.FlatAppearance.BorderSize = 0;
+            btnAdmin.FlatStyle = FlatStyle.Flat;
+            btnAdmin.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            btnAdmin.ForeColor = Color.White;
+            btnAdmin.Location = new Point(25, 222);
+            btnAdmin.Margin = new Padding(25, 6, 25, 6);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(523, 132);
+            btnAdmin.TabIndex = 1;
+            btnAdmin.Text = "Administrador";
+            btnAdmin.UseVisualStyleBackColor = false;
+            btnAdmin.Click += btnAdmin_Click;
             // 
-            // Add controls
+            // FrmEscolha
             // 
-            this.tableLayoutPanel1.Controls.Add(this.btnAluno, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnAdmin, 0, 2);
-            this.Controls.Add(this.tableLayoutPanel1);
-
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            BackgroundImage = Properties.Resources.livros_capa_02;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(573, 360);
+            Controls.Add(tableLayoutPanel1);
+            Margin = new Padding(2, 2, 2, 2);
+            MinimumSize = new Size(388, 256);
+            Name = "FrmEscolha";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Escolha o tipo de acesso";
+            tableLayoutPanel1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
