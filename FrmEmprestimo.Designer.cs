@@ -31,6 +31,7 @@
             lblAluno = new Label();
             txtCodigoQR = new TextBox();
             btnDevolver = new Button();
+            lblDescricao = new Label();
             SuspendLayout();
             // 
             // lblAluno
@@ -54,7 +55,7 @@
             // 
             // btnDevolver
             // 
-            btnDevolver.Location = new Point(152, 161);
+            btnDevolver.Location = new Point(145, 193);
             btnDevolver.Margin = new Padding(2);
             btnDevolver.Name = "btnDevolver";
             btnDevolver.Size = new Size(121, 22);
@@ -63,12 +64,22 @@
             btnDevolver.UseVisualStyleBackColor = true;
             btnDevolver.Click += btnDevolver_Click_1;
             // 
+            // lblDescricao
+            // 
+            lblDescricao.AutoSize = true;
+            lblDescricao.Location = new Point(23, 147);
+            lblDescricao.Name = "lblDescricao";
+            lblDescricao.Size = new Size(464, 15);
+            lblDescricao.TabIndex = 3;
+            lblDescricao.Text = "Bip seu livro e click em \"Ok\", se deseja fazer uma devolução click em \"Devolver Livros\".";
+            // 
             // FrmEmprestimo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(509, 270);
+            Controls.Add(lblDescricao);
             Controls.Add(btnDevolver);
             Controls.Add(txtCodigoQR);
             Controls.Add(lblAluno);
@@ -85,5 +96,6 @@
         private Label lblAluno;
         private TextBox txtCodigoQR;
         private Button btnDevolver;
+        private Label lblDescricao;
     }
 }

@@ -158,130 +158,59 @@ namespace BibliotecaQRCode
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-
-            // Controles
-            this.tableMain = new System.Windows.Forms.TableLayoutPanel();
-            this.panelContent = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblAutor = new System.Windows.Forms.Label();
-            this.lblCodigoQR = new System.Windows.Forms.Label();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtAutor = new System.Windows.Forms.TextBox();
-            this.txtCodigoQR = new System.Windows.Forms.TextBox();
-            this.flowButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-
-            this.SuspendLayout();
-
-            // ----------------------------
+            tableMain = new TableLayoutPanel();
+            panelContent = new Panel();
+            innerLayout = new TableLayoutPanel();
+            lblTitulo = new Label();
+            txtTitulo = new TextBox();
+            lblAutor = new Label();
+            txtAutor = new TextBox();
+            lblCodigoQR = new Label();
+            txtCodigoQR = new TextBox();
+            flowButtons = new FlowLayoutPanel();
+            btnOK = new Button();
+            btnCancelar = new Button();
+            tableMain.SuspendLayout();
+            panelContent.SuspendLayout();
+            innerLayout.SuspendLayout();
+            flowButtons.SuspendLayout();
+            SuspendLayout();
+            // 
             // tableMain
-            // ----------------------------
-            this.tableMain.ColumnCount = 1;
-            this.tableMain.RowCount = 3;
-            this.tableMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 100F));
-            this.tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 20F)); // Topo
-            this.tableMain.RowStyles.Add(new RowStyle(SizeType.AutoSize));      // Conteúdo central
-            this.tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 80F)); // Rodapé
-            this.tableMain.Padding = new Padding(12);
-
-            // ----------------------------
+            // 
+            tableMain.ColumnCount = 1;
+            tableMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableMain.Controls.Add(panelContent, 0, 1);
+            tableMain.Dock = DockStyle.Fill;
+            tableMain.Location = new Point(0, 0);
+            tableMain.Name = "tableMain";
+            tableMain.Padding = new Padding(12);
+            tableMain.RowCount = 3;
+            tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableMain.RowStyles.Add(new RowStyle());
+            tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            tableMain.Size = new Size(800, 450);
+            tableMain.TabIndex = 0;
+            // 
             // panelContent
-            // ----------------------------
-            this.panelContent.AutoSize = true;
-            this.panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            this.panelContent.Dock = DockStyle.Fill;
-            this.panelContent.MinimumSize = new System.Drawing.Size(400, 250);
-            this.panelContent.Padding = new Padding(12);
-
-            // ----------------------------
-            // Labels
-            // ----------------------------
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.lblTitulo.Text = "Título do Livro:";
-            this.lblTitulo.Dock = DockStyle.Fill;
-            this.lblTitulo.Margin = new Padding(0, 6, 0, 2);
-
-            this.lblAutor.AutoSize = true;
-            this.lblAutor.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.lblAutor.Text = "Autor:";
-            this.lblAutor.Dock = DockStyle.Fill;
-            this.lblAutor.Margin = new Padding(0, 6, 0, 2);
-
-            this.lblCodigoQR.AutoSize = true;
-            this.lblCodigoQR.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.lblCodigoQR.Text = "Código QR:";
-            this.lblCodigoQR.Dock = DockStyle.Fill;
-            this.lblCodigoQR.Margin = new Padding(0, 6, 0, 2);
-
-            // ----------------------------
-            // TextBoxes
-            // ----------------------------
-            this.txtTitulo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            this.txtTitulo.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            this.txtTitulo.Margin = new Padding(0, 0, 0, 12);
-
-            this.txtAutor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            this.txtAutor.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            this.txtAutor.Margin = new Padding(0, 0, 0, 12);
-
-            this.txtCodigoQR.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            this.txtCodigoQR.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            this.txtCodigoQR.Margin = new Padding(0, 0, 0, 12);
-
-            // ----------------------------
-            // flowButtons
-            // ----------------------------
-            this.flowButtons.FlowDirection = FlowDirection.LeftToRight;
-            this.flowButtons.WrapContents = false;
-            this.flowButtons.AutoSize = true;
-            this.flowButtons.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            this.flowButtons.Anchor = AnchorStyles.Top;
-            this.flowButtons.Margin = new Padding(0, 12, 0, 0);
-
-            this.btnOK.Text = "OK";
-            this.btnOK.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            this.btnOK.BackColor = Color.FromArgb(70, 130, 180);
-            this.btnOK.ForeColor = Color.White;
-            this.btnOK.FlatStyle = FlatStyle.Flat;
-            this.btnOK.FlatAppearance.BorderSize = 0;
-            this.btnOK.Size = new Size(100, 36);
-            this.btnOK.Click += new EventHandler(this.btnOK_Click_1);
-
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            this.btnCancelar.BackColor = Color.Gray;
-            this.btnCancelar.ForeColor = Color.White;
-            this.btnCancelar.FlatStyle = FlatStyle.Flat;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Size = new Size(100, 36);
-            this.btnCancelar.Click += new EventHandler(this.btnCancelar_Click_1);
-
-            this.flowButtons.Controls.Add(this.btnOK);
-            this.flowButtons.Controls.Add(this.btnCancelar);
-
-            // ----------------------------
-            // TableLayoutPanel interno para centralizar conteúdo
-            // ----------------------------
-            TableLayoutPanel innerLayout = new TableLayoutPanel();
-            innerLayout.Dock = DockStyle.Fill;
+            // 
+            panelContent.AutoSize = true;
+            panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelContent.Controls.Add(innerLayout);
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(15, 37);
+            panelContent.MinimumSize = new Size(400, 250);
+            panelContent.Name = "panelContent";
+            panelContent.Padding = new Padding(12);
+            panelContent.Size = new Size(770, 306);
+            panelContent.TabIndex = 0;
+            // 
+            // innerLayout
+            // 
             innerLayout.AutoSize = true;
             innerLayout.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             innerLayout.ColumnCount = 1;
-            innerLayout.RowCount = 7;
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // lblTitulo
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // txtTitulo
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // lblAutor
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // txtAutor
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // lblCodigoQR
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // txtCodigoQR
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // flowButtons
-            innerLayout.Padding = new Padding(12);
-            innerLayout.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-
+            innerLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             innerLayout.Controls.Add(lblTitulo, 0, 0);
             innerLayout.Controls.Add(txtTitulo, 0, 1);
             innerLayout.Controls.Add(lblAutor, 0, 2);
@@ -289,29 +218,150 @@ namespace BibliotecaQRCode
             innerLayout.Controls.Add(lblCodigoQR, 0, 4);
             innerLayout.Controls.Add(txtCodigoQR, 0, 5);
             innerLayout.Controls.Add(flowButtons, 0, 6);
-
-            this.panelContent.Controls.Add(innerLayout);
-
-            // ----------------------------
-            // Adiciona panelContent à tableMain
-            // ----------------------------
-            this.tableMain.Controls.Add(this.panelContent, 0, 1);
-
-            // ----------------------------
-            // FrmLivroEditar (form)
-            // ----------------------------
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.LightSteelBlue;
-            this.ClientSize = new Size(800, 450);
-            this.Controls.Add(this.tableMain);
-            this.MinimumSize = new Size(600, 400);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "Editar Livro";
-            this.FormBorderStyle = FormBorderStyle.Sizable;
-
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            innerLayout.Dock = DockStyle.Fill;
+            innerLayout.Location = new Point(12, 12);
+            innerLayout.Name = "innerLayout";
+            innerLayout.Padding = new Padding(12);
+            innerLayout.RowCount = 7;
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.Size = new Size(746, 282);
+            innerLayout.TabIndex = 0;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Dock = DockStyle.Fill;
+            lblTitulo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblTitulo.Location = new Point(12, 18);
+            lblTitulo.Margin = new Padding(0, 6, 0, 2);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(722, 21);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Título do Livro:";
+            // 
+            // txtTitulo
+            // 
+            txtTitulo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtTitulo.Font = new Font("Segoe UI", 11F);
+            txtTitulo.Location = new Point(12, 41);
+            txtTitulo.Margin = new Padding(0, 0, 0, 12);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(722, 27);
+            txtTitulo.TabIndex = 1;
+            // 
+            // lblAutor
+            // 
+            lblAutor.AutoSize = true;
+            lblAutor.Dock = DockStyle.Fill;
+            lblAutor.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblAutor.Location = new Point(12, 86);
+            lblAutor.Margin = new Padding(0, 6, 0, 2);
+            lblAutor.Name = "lblAutor";
+            lblAutor.Size = new Size(722, 21);
+            lblAutor.TabIndex = 2;
+            lblAutor.Text = "Autor:";
+            // 
+            // txtAutor
+            // 
+            txtAutor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtAutor.Font = new Font("Segoe UI", 11F);
+            txtAutor.Location = new Point(12, 109);
+            txtAutor.Margin = new Padding(0, 0, 0, 12);
+            txtAutor.Name = "txtAutor";
+            txtAutor.Size = new Size(722, 27);
+            txtAutor.TabIndex = 3;
+            // 
+            // lblCodigoQR
+            // 
+            lblCodigoQR.AutoSize = true;
+            lblCodigoQR.Dock = DockStyle.Fill;
+            lblCodigoQR.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblCodigoQR.Location = new Point(12, 154);
+            lblCodigoQR.Margin = new Padding(0, 6, 0, 2);
+            lblCodigoQR.Name = "lblCodigoQR";
+            lblCodigoQR.Size = new Size(722, 21);
+            lblCodigoQR.TabIndex = 4;
+            lblCodigoQR.Text = "Código QR:";
+            // 
+            // txtCodigoQR
+            // 
+            txtCodigoQR.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtCodigoQR.Font = new Font("Segoe UI", 11F);
+            txtCodigoQR.Location = new Point(12, 177);
+            txtCodigoQR.Margin = new Padding(0, 0, 0, 12);
+            txtCodigoQR.Name = "txtCodigoQR";
+            txtCodigoQR.Size = new Size(722, 27);
+            txtCodigoQR.TabIndex = 5;
+            // 
+            // flowButtons
+            // 
+            flowButtons.Anchor = AnchorStyles.Top;
+            flowButtons.AutoSize = true;
+            flowButtons.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowButtons.Controls.Add(btnOK);
+            flowButtons.Controls.Add(btnCancelar);
+            flowButtons.Location = new Point(267, 228);
+            flowButtons.Margin = new Padding(0, 12, 0, 0);
+            flowButtons.Name = "flowButtons";
+            flowButtons.Size = new Size(212, 42);
+            flowButtons.TabIndex = 6;
+            flowButtons.WrapContents = false;
+            // 
+            // btnOK
+            // 
+            btnOK.BackColor = Color.FromArgb(70, 130, 180);
+            btnOK.FlatAppearance.BorderSize = 0;
+            btnOK.FlatStyle = FlatStyle.Flat;
+            btnOK.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnOK.ForeColor = Color.White;
+            btnOK.Location = new Point(3, 3);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new Size(100, 36);
+            btnOK.TabIndex = 0;
+            btnOK.Text = "OK";
+            btnOK.UseVisualStyleBackColor = false;
+            btnOK.Click += btnOK_Click_1;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.Gray;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(109, 3);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(100, 36);
+            btnCancelar.TabIndex = 1;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click_1;
+            // 
+            // FrmLivroEditar
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
+            ClientSize = new Size(800, 450);
+            Controls.Add(tableMain);
+            MinimumSize = new Size(600, 400);
+            Name = "FrmLivroEditar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Editar Livro";
+            tableMain.ResumeLayout(false);
+            tableMain.PerformLayout();
+            panelContent.ResumeLayout(false);
+            panelContent.PerformLayout();
+            innerLayout.ResumeLayout(false);
+            innerLayout.PerformLayout();
+            flowButtons.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
@@ -327,5 +377,6 @@ namespace BibliotecaQRCode
         private FlowLayoutPanel flowButtons;
         private Button btnOK;
         private Button btnCancelar;
+        private TableLayoutPanel innerLayout;
     }
 }

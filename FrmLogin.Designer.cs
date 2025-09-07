@@ -105,140 +105,160 @@ namespace BibliotecaQRCode
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-
-            // Controles
-            this.tableMain = new System.Windows.Forms.TableLayoutPanel();
-            this.panelContent = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblMatricula = new System.Windows.Forms.Label();
-            this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.flowButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnEntrar = new System.Windows.Forms.Button();
-
-            this.SuspendLayout();
-
-            // ----------------------------
+            tableMain = new TableLayoutPanel();
+            panelContent = new Panel();
+            innerLayout = new TableLayoutPanel();
+            lblTitulo = new Label();
+            lblMatricula = new Label();
+            txtMatricula = new TextBox();
+            flowButtons = new FlowLayoutPanel();
+            btnEntrar = new Button();
+            tableMain.SuspendLayout();
+            panelContent.SuspendLayout();
+            innerLayout.SuspendLayout();
+            flowButtons.SuspendLayout();
+            SuspendLayout();
+            // 
             // tableMain
-            // ----------------------------
-            this.tableMain.ColumnCount = 1;
-            this.tableMain.RowCount = 3;
-            this.tableMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
-            this.tableMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.tableMain.Padding = new System.Windows.Forms.Padding(12);
-
-            // ----------------------------
+            // 
+            tableMain.BackColor = Color.LightSteelBlue;
+            tableMain.ColumnCount = 1;
+            tableMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableMain.Controls.Add(panelContent, 0, 1);
+            tableMain.Dock = DockStyle.Fill;
+            tableMain.Location = new Point(0, 0);
+            tableMain.Name = "tableMain";
+            tableMain.Padding = new Padding(12);
+            tableMain.RowCount = 3;
+            tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 33F));
+            tableMain.RowStyles.Add(new RowStyle());
+            tableMain.RowStyles.Add(new RowStyle(SizeType.Percent, 67F));
+            tableMain.Size = new Size(700, 420);
+            tableMain.TabIndex = 0;
+            // 
             // panelContent
-            // ----------------------------
-            this.panelContent.AutoSize = true;
-            this.panelContent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.MinimumSize = new System.Drawing.Size(360, 160);
-            this.panelContent.Padding = new System.Windows.Forms.Padding(12);
-
-            // ----------------------------
-            // lblTitulo
-            // ----------------------------
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(30, 30, 30);
-            this.lblTitulo.Text = "Login Biblioteca";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(0, 0, 0, 18);
-
-            // ----------------------------
-            // lblMatricula
-            // ----------------------------
-            this.lblMatricula.AutoSize = true;
-            this.lblMatricula.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMatricula.Text = "Matrícula:";
-            this.lblMatricula.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblMatricula.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMatricula.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
-
-            // ----------------------------
-            // txtMatricula
-            // ----------------------------
-            this.txtMatricula.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMatricula.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMatricula.Size = new System.Drawing.Size(260, 27);
-            this.txtMatricula.Margin = new System.Windows.Forms.Padding(0, 0, 0, 18);
-            this.txtMatricula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-
-            // ----------------------------
-            // flowButtons
-            // ----------------------------
-            this.flowButtons.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
-            this.flowButtons.WrapContents = false;
-            this.flowButtons.AutoSize = true;
-            this.flowButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowButtons.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.flowButtons.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
-
-            // ----------------------------
-            // btnEntrar
-            // ----------------------------
-            this.btnEntrar.Text = "Entrar";
-            this.btnEntrar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEntrar.BackColor = System.Drawing.Color.FromArgb(70, 130, 180);
-            this.btnEntrar.ForeColor = System.Drawing.Color.White;
-            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrar.FlatAppearance.BorderSize = 0;
-            this.btnEntrar.Size = new System.Drawing.Size(140, 42);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnEntrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click_1);
-
-            this.flowButtons.Controls.Add(this.btnEntrar);
-
-            // ----------------------------
-            // TableLayoutPanel interno para centralizar conteúdo
-            // ----------------------------
-            TableLayoutPanel innerLayout = new TableLayoutPanel();
-            innerLayout.Dock = DockStyle.Fill;
+            // 
+            panelContent.AutoSize = true;
+            panelContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelContent.Controls.Add(innerLayout);
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(15, 67);
+            panelContent.MinimumSize = new Size(360, 160);
+            panelContent.Name = "panelContent";
+            panelContent.Padding = new Padding(12);
+            panelContent.Size = new Size(670, 231);
+            panelContent.TabIndex = 0;
+            // 
+            // innerLayout
+            // 
             innerLayout.AutoSize = true;
             innerLayout.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             innerLayout.ColumnCount = 1;
-            innerLayout.RowCount = 4;
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // Título
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // Matrícula label
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // TextBox
-            innerLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // Botões
-            innerLayout.Padding = new Padding(12);
-            innerLayout.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-
+            innerLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             innerLayout.Controls.Add(lblTitulo, 0, 0);
             innerLayout.Controls.Add(lblMatricula, 0, 1);
             innerLayout.Controls.Add(txtMatricula, 0, 2);
             innerLayout.Controls.Add(flowButtons, 0, 3);
-
-            this.panelContent.Controls.Add(innerLayout);
-
-            // ----------------------------
-            // Adiciona panelContent à tableMain
-            // ----------------------------
-            this.tableMain.Controls.Add(this.panelContent, 0, 1);
-
-            // ----------------------------
-            // FrmLogin (form)
-            // ----------------------------
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(700, 420);
-            this.Controls.Add(this.tableMain);
-            this.MinimumSize = new System.Drawing.Size(520, 340);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            innerLayout.Dock = DockStyle.Fill;
+            innerLayout.Location = new Point(12, 12);
+            innerLayout.Name = "innerLayout";
+            innerLayout.Padding = new Padding(12);
+            innerLayout.RowCount = 4;
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.RowStyles.Add(new RowStyle());
+            innerLayout.Size = new Size(646, 207);
+            innerLayout.TabIndex = 0;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Dock = DockStyle.Fill;
+            lblTitulo.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.FromArgb(30, 30, 30);
+            lblTitulo.Location = new Point(12, 12);
+            lblTitulo.Margin = new Padding(0, 0, 0, 18);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(622, 37);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Login Biblioteca";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblMatricula
+            // 
+            lblMatricula.AutoSize = true;
+            lblMatricula.Dock = DockStyle.Fill;
+            lblMatricula.Font = new Font("Segoe UI", 12F);
+            lblMatricula.Location = new Point(12, 73);
+            lblMatricula.Margin = new Padding(0, 6, 0, 6);
+            lblMatricula.Name = "lblMatricula";
+            lblMatricula.Size = new Size(622, 21);
+            lblMatricula.TabIndex = 1;
+            lblMatricula.Text = "Matrícula:";
+            lblMatricula.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // txtMatricula
+            // 
+            txtMatricula.Anchor = AnchorStyles.Top;
+            txtMatricula.Font = new Font("Segoe UI", 11F);
+            txtMatricula.Location = new Point(193, 100);
+            txtMatricula.Margin = new Padding(0, 0, 0, 18);
+            txtMatricula.Name = "txtMatricula";
+            txtMatricula.Size = new Size(260, 27);
+            txtMatricula.TabIndex = 2;
+            txtMatricula.TextAlign = HorizontalAlignment.Center;
+            // 
+            // flowButtons
+            // 
+            flowButtons.Anchor = AnchorStyles.Top;
+            flowButtons.AutoSize = true;
+            flowButtons.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowButtons.Controls.Add(btnEntrar);
+            flowButtons.Location = new Point(253, 153);
+            flowButtons.Margin = new Padding(0, 8, 0, 0);
+            flowButtons.Name = "flowButtons";
+            flowButtons.Size = new Size(140, 42);
+            flowButtons.TabIndex = 3;
+            flowButtons.WrapContents = false;
+            // 
+            // btnEntrar
+            // 
+            btnEntrar.Anchor = AnchorStyles.None;
+            btnEntrar.BackColor = Color.FromArgb(70, 130, 180);
+            btnEntrar.Cursor = Cursors.Hand;
+            btnEntrar.FlatAppearance.BorderSize = 0;
+            btnEntrar.FlatStyle = FlatStyle.Flat;
+            btnEntrar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnEntrar.ForeColor = Color.White;
+            btnEntrar.Location = new Point(0, 0);
+            btnEntrar.Margin = new Padding(0);
+            btnEntrar.Name = "btnEntrar";
+            btnEntrar.Size = new Size(140, 42);
+            btnEntrar.TabIndex = 0;
+            btnEntrar.Text = "Entrar";
+            btnEntrar.UseVisualStyleBackColor = false;
+            btnEntrar.Click += btnEntrar_Click_1;
+            // 
+            // FrmLogin
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(700, 420);
+            Controls.Add(tableMain);
+            MinimumSize = new Size(520, 340);
+            Name = "FrmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
+            tableMain.ResumeLayout(false);
+            tableMain.PerformLayout();
+            panelContent.ResumeLayout(false);
+            panelContent.PerformLayout();
+            innerLayout.ResumeLayout(false);
+            innerLayout.PerformLayout();
+            flowButtons.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
@@ -250,5 +270,6 @@ namespace BibliotecaQRCode
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.FlowLayoutPanel flowButtons;
         private System.Windows.Forms.Button btnEntrar;
+        private TableLayoutPanel innerLayout;
     }
 }

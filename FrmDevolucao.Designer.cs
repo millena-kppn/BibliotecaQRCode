@@ -30,6 +30,7 @@
         {
             txtCodigoQR = new TextBox();
             btnDevolver = new Button();
+            lblDescricao = new Label();
             SuspendLayout();
             // 
             // txtCodigoQR
@@ -52,12 +53,22 @@
             btnDevolver.UseVisualStyleBackColor = true;
             btnDevolver.Click += btnDevolver_Click;
             // 
+            // lblDescricao
+            // 
+            lblDescricao.AutoSize = true;
+            lblDescricao.Location = new Point(123, 49);
+            lblDescricao.Name = "lblDescricao";
+            lblDescricao.Size = new Size(209, 15);
+            lblDescricao.TabIndex = 2;
+            lblDescricao.Text = "Após bipar seu livro click em devolver.";
+            // 
             // FrmDevolucao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(509, 270);
+            Controls.Add(lblDescricao);
             Controls.Add(btnDevolver);
             Controls.Add(txtCodigoQR);
             Margin = new Padding(2);
@@ -71,5 +82,6 @@
 
         private TextBox txtCodigoQR;
         private Button btnDevolver;
+        private Label lblDescricao;
     }
 }

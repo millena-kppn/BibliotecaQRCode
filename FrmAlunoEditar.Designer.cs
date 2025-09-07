@@ -35,6 +35,7 @@
             lblAluno = new Label();
             lblMatricula = new Label();
             cmbCurso = new ComboBox();
+            lblCurso = new Label();
             SuspendLayout();
             // 
             // txtNome
@@ -98,12 +99,22 @@
             cmbCurso.Size = new Size(171, 23);
             cmbCurso.TabIndex = 6;
             // 
+            // lblCurso
+            // 
+            lblCurso.AutoSize = true;
+            lblCurso.Location = new Point(369, 127);
+            lblCurso.Name = "lblCurso";
+            lblCurso.Size = new Size(38, 15);
+            lblCurso.TabIndex = 7;
+            lblCurso.Text = "Curso";
+            // 
             // FrmAlunoEditar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblCurso);
             Controls.Add(cmbCurso);
             Controls.Add(lblMatricula);
             Controls.Add(lblAluno);
@@ -126,5 +137,6 @@
         private Label lblAluno;
         private Label lblMatricula;
         private ComboBox cmbCurso;
+        private Label lblCurso;
     }
 }
