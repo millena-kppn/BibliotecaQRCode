@@ -195,7 +195,7 @@ namespace BibliotecaQRCode
             lblMatricula.Name = "lblMatricula";
             lblMatricula.Size = new Size(622, 21);
             lblMatricula.TabIndex = 1;
-            lblMatricula.Text = "Matrícula:";
+            lblMatricula.Text = "Digite sua matrícula na caixa de texto:";
             lblMatricula.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtMatricula

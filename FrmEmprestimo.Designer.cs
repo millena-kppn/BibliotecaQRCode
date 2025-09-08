@@ -67,7 +67,7 @@
 //            panelContent.MinimumSize = new Size(360, 160);
 //            panelContent.Name = "panelContent";
 //            panelContent.Padding = new Padding(12);
-//            panelContent.Size = new Size(570, 241);
+//            panelContent.Size = new Size(570, 243);
 //            panelContent.TabIndex = 0;
 //            // 
 //            // innerLayout
@@ -91,7 +91,7 @@
 //            innerLayout.RowStyles.Add(new RowStyle());
 //            innerLayout.RowStyles.Add(new RowStyle());
 //            innerLayout.RowStyles.Add(new RowStyle());
-//            innerLayout.Size = new Size(546, 217);
+//            innerLayout.Size = new Size(546, 219);
 //            innerLayout.TabIndex = 0;
 //            // 
 //            // lblAluno
@@ -141,12 +141,12 @@
 //            // 
 //            lblDescricao.AutoSize = true;
 //            lblDescricao.Dock = DockStyle.Fill;
-//            lblDescricao.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
+//            lblDescricao.Font = new Font("Arial", 10F);
 //            lblDescricao.Location = new Point(12, 130);
 //            lblDescricao.Margin = new Padding(0, 0, 0, 10);
 //            lblDescricao.MaximumSize = new Size(520, 0);
 //            lblDescricao.Name = "lblDescricao";
-//            lblDescricao.Size = new Size(520, 30);
+//            lblDescricao.Size = new Size(520, 32);
 //            lblDescricao.TabIndex = 3;
 //            lblDescricao.Text = "Bipe seu livro e clique em \"Ok\" para gerar um empréstimo. Se deseja fazer uma devolução clique em \"Devolver Livros\".";
 //            lblDescricao.TextAlign = ContentAlignment.MiddleCenter;
@@ -157,7 +157,7 @@
 //            flowButtons.AutoSize = true;
 //            flowButtons.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 //            flowButtons.Controls.Add(btnDevolver);
-//            flowButtons.Location = new Point(198, 170);
+//            flowButtons.Location = new Point(198, 172);
 //            flowButtons.Margin = new Padding(0);
 //            flowButtons.Name = "flowButtons";
 //            flowButtons.Size = new Size(150, 35);
@@ -250,12 +250,14 @@ namespace BibliotecaQRCode
             lblAluno = new Label();
             txtCodigoQR = new TextBox();
             btnOk = new Button();
+            tableDescricao = new TableLayoutPanel();
             lblDescricao = new Label();
             flowButtons = new FlowLayoutPanel();
             btnDevolver = new Button();
             tableMain.SuspendLayout();
             panelContent.SuspendLayout();
             innerLayout.SuspendLayout();
+            tableDescricao.SuspendLayout();
             flowButtons.SuspendLayout();
             SuspendLayout();
             // 
@@ -298,7 +300,7 @@ namespace BibliotecaQRCode
             innerLayout.Controls.Add(lblAluno, 0, 0);
             innerLayout.Controls.Add(txtCodigoQR, 0, 1);
             innerLayout.Controls.Add(btnOk, 0, 2);
-            innerLayout.Controls.Add(lblDescricao, 0, 3);
+            innerLayout.Controls.Add(tableDescricao, 0, 3);
             innerLayout.Controls.Add(flowButtons, 0, 4);
             innerLayout.Dock = DockStyle.Fill;
             innerLayout.Location = new Point(12, 12);
@@ -356,17 +358,29 @@ namespace BibliotecaQRCode
             btnOk.UseVisualStyleBackColor = false;
             btnOk.Click += btnOk_Click;
             // 
+            // tableDescricao
+            // 
+            tableDescricao.AutoSize = true;
+            tableDescricao.ColumnCount = 3;
+            tableDescricao.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableDescricao.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+            tableDescricao.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableDescricao.Controls.Add(lblDescricao, 1, 0);
+            tableDescricao.Dock = DockStyle.Fill;
+            tableDescricao.Location = new Point(12, 130);
+            tableDescricao.Margin = new Padding(0, 0, 0, 10);
+            tableDescricao.Name = "tableDescricao";
+            tableDescricao.RowCount = 1;
+            tableDescricao.RowStyles.Add(new RowStyle());
+            tableDescricao.Size = new Size(522, 32);
+            tableDescricao.TabIndex = 5;
+            // 
             // lblDescricao
             // 
             lblDescricao.AutoSize = true;
-            lblDescricao.Dock = DockStyle.Fill;
             lblDescricao.Font = new Font("Arial", 10F);
-            lblDescricao.Location = new Point(12, 130);
-            lblDescricao.Margin = new Padding(0, 0, 0, 10);
             lblDescricao.MaximumSize = new Size(520, 0);
             lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(520, 32);
-            lblDescricao.TabIndex = 3;
             lblDescricao.Text = "Bipe seu livro e clique em \"Ok\" para gerar um empréstimo. Se deseja fazer uma devolução clique em \"Devolver Livros\".";
             lblDescricao.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -419,6 +433,8 @@ namespace BibliotecaQRCode
             panelContent.PerformLayout();
             innerLayout.ResumeLayout(false);
             innerLayout.PerformLayout();
+            tableDescricao.ResumeLayout(false);
+            tableDescricao.PerformLayout();
             flowButtons.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -431,9 +447,9 @@ namespace BibliotecaQRCode
         private Label lblAluno;
         private TextBox txtCodigoQR;
         private Button btnOk;
+        private TableLayoutPanel tableDescricao;
         private Label lblDescricao;
         private FlowLayoutPanel flowButtons;
         private Button btnDevolver;
     }
 }
-
